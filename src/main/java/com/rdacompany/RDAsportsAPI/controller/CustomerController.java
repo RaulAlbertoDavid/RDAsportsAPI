@@ -67,7 +67,9 @@ public class CustomerController {
     public Customer removeCustomer(@PathVariable int customerId) throws CustomerNotFoundException {
         logger.info("Inicio removeCustomer");
         Customer customer = customerService.removeCustomer(customerId);
-        logger.info("Fin removeCustome");
+        logger.info("Fin removeCustomer");
         return customer;
+
+
     }
 }

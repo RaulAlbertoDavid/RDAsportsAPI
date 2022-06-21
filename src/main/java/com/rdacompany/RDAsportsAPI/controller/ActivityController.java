@@ -30,7 +30,6 @@ public class ActivityController {
     public List<Activity> getActivities() {
         List<Activity> activities;
 
-
             activities = activityService.findAll();
 
         return activities;
