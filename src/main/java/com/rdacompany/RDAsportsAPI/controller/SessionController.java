@@ -2,7 +2,9 @@ package com.rdacompany.RDAsportsAPI.controller;
 
 import com.rdacompany.RDAsportsAPI.domain.Session;
 import com.rdacompany.RDAsportsAPI.domain.dto.SessionDto;
+import com.rdacompany.RDAsportsAPI.exception.ActivityNotFoundExcepction;
 import com.rdacompany.RDAsportsAPI.exception.AreaNotFoundException;
+import com.rdacompany.RDAsportsAPI.exception.EmployeeNotFoundException;
 import com.rdacompany.RDAsportsAPI.exception.SessionNotFoundException;
 import com.rdacompany.RDAsportsAPI.service.SessionService;
 import org.slf4j.Logger;
@@ -51,13 +53,18 @@ public class SessionController {
         return session;
     }
 
-   /* @PutMapping("/session/{sessionId}")
-    public Session modifySession(@RequestBody Session session, @PathVariable int sessionId) throws SessionNotFoundException {
+    @PutMapping("/session/{sessionId}")
+    public Session modifySession(@RequestBody SessionDto newSessionDto, @PathVariable int sessionId) throws SessionNotFoundException, AreaNotFoundException, ActivityNotFoundExcepction, EmployeeNotFoundException {
         logger.info("Inicio modifySession");
-        Session newSession = sessionService.modifySession(sessionId, session);
+        Session session = null;
+        try {
+            session = sessionService.modifySession(sessionId, newSessionDto);
+        } catch (com.rdacompany.RDAsportsAPI.exception.EmployeeNotFoundException e) {
+            e.printStackTrace();
+        }
         logger.info("Inicio modifySession");
-        return  newSession;
-    }*/
+        return  session;
+    }
 
 
 }

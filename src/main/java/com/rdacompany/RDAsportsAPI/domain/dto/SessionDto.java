@@ -18,7 +18,7 @@ public class SessionDto {
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
     private LocalDateTime dateTime;
-    private int duration4;
+    private int duration;
     private int capacity;
     private int level;
     private int activity;

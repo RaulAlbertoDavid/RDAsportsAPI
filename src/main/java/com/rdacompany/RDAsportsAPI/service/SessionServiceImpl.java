@@ -5,7 +5,9 @@ import com.rdacompany.RDAsportsAPI.domain.Area;
 import com.rdacompany.RDAsportsAPI.domain.Employee;
 import com.rdacompany.RDAsportsAPI.domain.Session;
 import com.rdacompany.RDAsportsAPI.domain.dto.SessionDto;
+import com.rdacompany.RDAsportsAPI.exception.ActivityNotFoundExcepction;
 import com.rdacompany.RDAsportsAPI.exception.AreaNotFoundException;
+import com.rdacompany.RDAsportsAPI.exception.EmployeeNotFoundException;
 import com.rdacompany.RDAsportsAPI.exception.SessionNotFoundException;
 import com.rdacompany.RDAsportsAPI.repository.ActivityRepository;
 import com.rdacompany.RDAsportsAPI.repository.AreaRepository;
@@ -72,14 +74,24 @@ public class SessionServiceImpl implements SessionService{
         return session;
     }
 
-//    @Override
-//    public Session modifySession(int sessionId, Session newSession) throws SessionNotFoundException {
-//        Session session = sessionRepository.findById(sessionId)
-//                .orElseThrow(SessionNotFoundException::new);
-//
-//        ModelMapper mapper = new ModelMapper();
-//        session = mapper.map(newSession, Session.class);
-//        return sessionRepository.save(session);
-//    }
+   @Override
+   public Session modifySession(int sessionId, SessionDto newSessionDto) throws SessionNotFoundException, EmployeeNotFoundException, ActivityNotFoundExcepction, AreaNotFoundException {
+       Session session = sessionRepository.findById(sessionId)
+                .orElseThrow(SessionNotFoundException::new);
+
+        ModelMapper mapper = new ModelMapper();
+        Session newSession = mapper.map(newSessionDto, Session.class);
+        newSession.setSessionId(session.getSessionId());
+        Employee employee = employeeRepository.findById(newSessionDto.getEmployee())
+                .orElseThrow(EmployeeNotFoundException::new);
+        Activity activity = activityRepository.findById(newSessionDto.getActivity())
+                .orElseThrow(ActivityNotFoundExcepction::new);
+        Area area = areaRepository.findById(newSessionDto.getArea())
+                .orElseThrow(AreaNotFoundException::new);
+        newSession.setEmployee(employee);
+        newSession.setActivity(activity);
+        newSession.setArea(area);
+        return sessionRepository.save(newSession);
+    }
 
 }
