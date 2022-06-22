@@ -14,7 +14,7 @@ public interface SessionService {
 
     List<Session> findAll();
 
-    Session findBySessionId(int sessionId);
+    Session findBySessionId(int sessionId) throws SessionNotFoundException;
 
     Session deleteSession(int sessionId) throws SessionNotFoundException;
 

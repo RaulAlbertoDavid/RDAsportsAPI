@@ -62,14 +62,15 @@ public class SessionServiceImpl implements SessionService{
     }
 
     @Override
-    public Session findBySessionId(int sessionId) {
-        return sessionRepository.findBySessionId(sessionId);
+    public Session findBySessionId(int sessionId) throws SessionNotFoundException {
+        return sessionRepository.findById(sessionId).orElseThrow(SessionNotFoundException::new);
     }
 
     @Override
     public Session deleteSession(int sessionId) throws SessionNotFoundException {
         Session session = sessionRepository.findById(sessionId)
                 .orElseThrow(SessionNotFoundException::new);
+        session.getCustomers().clear();
         sessionRepository.delete(session);
         return session;
     }

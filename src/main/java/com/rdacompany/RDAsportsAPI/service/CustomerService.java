@@ -11,11 +11,11 @@ public interface CustomerService {
 
     void addBooking(Customer customer, Session session);
 
-    Customer removeCustomer(int customerId) throws CustomerNotFoundException;
+    Customer deleteCustomer(int customerId) throws CustomerNotFoundException;
 
     List<Customer> findAll();
 
-    Customer findByCustomerId(int customerId);
+    Customer findByCustomerId(int customerId)throws CustomerNotFoundException;
 
-    Customer modifyCustomer(int customerId, Customer customer) throws CustomerNotFoundException;
+    Customer modifyCustomer(int customerId, Customer newCustomer) throws CustomerNotFoundException;
 }

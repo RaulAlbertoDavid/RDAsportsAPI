@@ -49,8 +49,8 @@ public class CustomerServiceImpl implements CustomerService{
     }
 
     @Override
-    public Customer findByCustomerId(int customerId) {
-        return customerRepository.findByCustomerId(customerId);
+    public Customer findByCustomerId(int customerId) throws CustomerNotFoundException{
+        return customerRepository.findById(customerId).orElseThrow(CustomerNotFoundException::new);
     }
 
     @Override
@@ -59,15 +59,17 @@ public class CustomerServiceImpl implements CustomerService{
                 .orElseThrow(CustomerNotFoundException::new);
 
         ModelMapper mapper = new ModelMapper();
-        customer = mapper.map(newCustomer, Customer.class);
+        Customer modCustomer = mapper.map(newCustomer, Customer.class);
+        modCustomer.setCustomerId(customer.getCustomerId());
         return customerRepository.save(customer);
     }
 
 
     @Override
-    public Customer removeCustomer(int customerId) throws CustomerNotFoundException {
+    public Customer deleteCustomer(int customerId) throws CustomerNotFoundException {
         Customer customer = customerRepository.findById(customerId).
                 orElseThrow(CustomerNotFoundException::new);
+        customer.getSessions().forEach(session -> session.getCustomers().stream().filter(customer1 -> customer1.equals(customer)));
         customerRepository.delete(customer);
         return customer;
     }
