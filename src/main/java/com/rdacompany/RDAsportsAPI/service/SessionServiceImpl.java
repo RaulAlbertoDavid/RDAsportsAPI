@@ -1,18 +1,9 @@
 package com.rdacompany.RDAsportsAPI.service;
 
-import com.rdacompany.RDAsportsAPI.domain.Activity;
-import com.rdacompany.RDAsportsAPI.domain.Area;
-import com.rdacompany.RDAsportsAPI.domain.Employee;
-import com.rdacompany.RDAsportsAPI.domain.Session;
+import com.rdacompany.RDAsportsAPI.domain.*;
 import com.rdacompany.RDAsportsAPI.domain.dto.SessionDto;
-import com.rdacompany.RDAsportsAPI.exception.ActivityNotFoundExcepction;
-import com.rdacompany.RDAsportsAPI.exception.AreaNotFoundException;
-import com.rdacompany.RDAsportsAPI.exception.EmployeeNotFoundException;
-import com.rdacompany.RDAsportsAPI.exception.SessionNotFoundException;
-import com.rdacompany.RDAsportsAPI.repository.ActivityRepository;
-import com.rdacompany.RDAsportsAPI.repository.AreaRepository;
-import com.rdacompany.RDAsportsAPI.repository.EmployeeRepository;
-import com.rdacompany.RDAsportsAPI.repository.SessionRepository;
+import com.rdacompany.RDAsportsAPI.exception.*;
+import com.rdacompany.RDAsportsAPI.repository.*;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,6 +21,8 @@ public class SessionServiceImpl implements SessionService{
     private ActivityRepository activityRepository;
     @Autowired
     private EmployeeRepository employeeRepository;
+    @Autowired
+    private CustomerRepository customerRepository;
     @Override
     public Session addSession(SessionDto sessionDto) throws AreaNotFoundException {
         //tengo que recuperar los objetos enteros para pasarlos a la base de datos no solo el id
@@ -93,6 +86,15 @@ public class SessionServiceImpl implements SessionService{
         newSession.setActivity(activity);
         newSession.setArea(area);
         return sessionRepository.save(newSession);
+    }
+
+    @Override
+    public void dropOut(int customerId, int sessionId) throws CustomerNotFoundException, SessionNotFoundException {
+        Customer customer = customerRepository.findById(customerId).orElseThrow(CustomerNotFoundException::new);
+        Session session = sessionRepository.findById(sessionId).orElseThrow(SessionNotFoundException::new);
+
+        session.getCustomers().remove(customer);
+        sessionRepository.save(session);
     }
 
 }

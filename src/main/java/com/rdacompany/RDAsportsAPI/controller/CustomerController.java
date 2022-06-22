@@ -2,7 +2,6 @@ package com.rdacompany.RDAsportsAPI.controller;
 
 import com.rdacompany.RDAsportsAPI.domain.Customer;
 import com.rdacompany.RDAsportsAPI.domain.Session;
-import com.rdacompany.RDAsportsAPI.domain.dto.BookingDto;
 import com.rdacompany.RDAsportsAPI.exception.*;
 import com.rdacompany.RDAsportsAPI.service.CustomerService;
 import com.rdacompany.RDAsportsAPI.service.SessionService;
@@ -30,18 +29,18 @@ public class CustomerController {
     private SessionService sessionService;
 
     @PostMapping("/customers")
-    public Customer addCustomer(@RequestBody Customer customer) {
+    public ResponseEntity<Customer> addCustomer(@RequestBody Customer customer) {
         logger.info("Inicio addCustomer");
         Customer newCustomer = customerService.addCustomer(customer);
         logger.info("Fin addCustomer");
-        return newCustomer;
+        return ResponseEntity.ok(newCustomer);
     }
 
     /*
      * Relacionar un customer con una session
      * */
     @PostMapping("/customer/{customerId}/session/{sessionId}")
-    public ResponseEntity<Response> relacion(@PathVariable int customerId, @PathVariable int sessionId)
+    public ResponseEntity<Response> register(@PathVariable int customerId, @PathVariable int sessionId)
             throws CustomerNotFoundException, SessionNotFoundException {
         logger.info("Inicio booking");
         Customer customer = customerService.findByCustomerId(customerId);
@@ -72,20 +71,20 @@ public class CustomerController {
 
 
     @DeleteMapping("/customer/{customerId}")
-    public Customer deleteCustomer(@PathVariable int customerId) throws CustomerNotFoundException {
+    public ResponseEntity<Customer> deleteCustomer(@PathVariable int customerId) throws CustomerNotFoundException {
         logger.info("Inicio removeCustomer");
         Customer customer = customerService.deleteCustomer(customerId);
         logger.info("Fin removeCustomer");
-        return customer;
+        return ResponseEntity.ok(customer);
     }
 
 
     @PutMapping("/customer/{customerId}")
-    public Customer modifyCustomer(@RequestBody Customer newCustomer, @PathVariable int customerId) throws CustomerNotFoundException {
+    public ResponseEntity<Customer> modifyCustomer(@RequestBody Customer newCustomer, @PathVariable int customerId) throws CustomerNotFoundException {
         logger.info("Inicio modifyCustomer");
         Customer Customer = customerService.modifyCustomer(customerId, newCustomer);
         logger.info("Fin modifyCustomer");
-        return newCustomer;
+        return ResponseEntity.ok(newCustomer);
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
@@ -108,9 +107,14 @@ public class CustomerController {
     }
 
     @ExceptionHandler(CustomerNotFoundException.class)
-    public ResponseEntity<ErrorResponse> handleCountryNotFoundException(CustomerNotFoundException cnfe) {
-        logger.info("404: Country not found");
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ErrorResponse.resourceNotFound(cnfe.getMessage()));
+    public ResponseEntity<ErrorResponse> handleCountryNotFoundException(CustomerNotFoundException customerNotFoundException) {
+        logger.info("404: Customer not found");
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ErrorResponse.resourceNotFound(customerNotFoundException.getMessage()));
+    }
+    @ExceptionHandler(CustomerNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleCountryNotFoundException(SessionNotFoundException snfe) {
+        logger.info("404: Session not found");
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ErrorResponse.resourceNotFound(snfe.getMessage()));
     }
 
     @ExceptionHandler(InternalServerErrorException.class)
