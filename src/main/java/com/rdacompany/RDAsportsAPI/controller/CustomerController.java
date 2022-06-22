@@ -64,7 +64,7 @@ public class CustomerController {
     }
 
     @GetMapping("/customer/{customerId}")
-    public ResponseEntity<Customer> getCustomerById(@PathVariable int customerId) throws CustomerNotFoundException{
+    public ResponseEntity<?> getCustomerById(@PathVariable int customerId) throws CustomerNotFoundException{
         Customer customer = customerService.findByCustomerId(customerId);
         return ResponseEntity.ok(customer);
     }
@@ -82,7 +82,7 @@ public class CustomerController {
     @PutMapping("/customer/{customerId}")
     public ResponseEntity<Customer> modifyCustomer(@RequestBody Customer newCustomer, @PathVariable int customerId) throws CustomerNotFoundException {
         logger.info("Inicio modifyCustomer");
-        Customer Customer = customerService.modifyCustomer(customerId, newCustomer);
+        Customer customer = customerService.modifyCustomer(customerId, newCustomer);
         logger.info("Fin modifyCustomer");
         return ResponseEntity.ok(newCustomer);
     }
@@ -106,13 +106,14 @@ public class CustomerController {
         return ResponseEntity.badRequest().body(ErrorResponse.badRequest(bre.getMessage()));
     }
 
+
     @ExceptionHandler(CustomerNotFoundException.class)
-    public ResponseEntity<ErrorResponse> handleCountryNotFoundException(CustomerNotFoundException customerNotFoundException) {
+    public ResponseEntity<ErrorResponse> handleCustomerNotFoundException(CustomerNotFoundException cnfe) {
         logger.info("404: Customer not found");
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ErrorResponse.resourceNotFound(customerNotFoundException.getMessage()));
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ErrorResponse.resourceNotFound(cnfe.getMessage()));
     }
-    @ExceptionHandler(CustomerNotFoundException.class)
-    public ResponseEntity<ErrorResponse> handleCountryNotFoundException(SessionNotFoundException snfe) {
+    @ExceptionHandler(SessionNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleSessionNotFoundException(SessionNotFoundException snfe) {
         logger.info("404: Session not found");
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ErrorResponse.resourceNotFound(snfe.getMessage()));
     }

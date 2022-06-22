@@ -32,7 +32,7 @@ public class SessionController {
     private CustomerService customerService;
 
     @PostMapping("/sessions")
-    public ResponseEntity<Session> addSession (@RequestBody SessionDto sessionDto) throws SessionNotFoundException, AreaNotFoundException {
+    public ResponseEntity<Session> addSession (@RequestBody SessionDto sessionDto) throws SessionNotFoundException, AreaNotFoundException, ActivityNotFoundExcepction, EmployeeNotFoundException {
         logger.info("Inicio addSession");
         Session newSession = sessionService.addSession(sessionDto);
         logger.info("Fin addSession");
@@ -106,28 +106,28 @@ public class SessionController {
     }
 
     @ExceptionHandler(SessionNotFoundException.class)
-    public ResponseEntity<ErrorResponse> handleCountryNotFoundException(SessionNotFoundException snfe) {
+    public ResponseEntity<ErrorResponse> handleSessionNotFoundException(SessionNotFoundException snfe) {
         logger.info("404: Session not found");
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ErrorResponse.resourceNotFound(snfe.getMessage()));
     }
 
-    @ExceptionHandler(SessionNotFoundException.class)
-    public ResponseEntity<ErrorResponse> handleCountryNotFoundException(AreaNotFoundException anfe) {
+    @ExceptionHandler(AreaNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleAreaNotFoundException(AreaNotFoundException anfe) {
         logger.info("404: Area not found");
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ErrorResponse.resourceNotFound(anfe.getMessage()));
     }
-    @ExceptionHandler(SessionNotFoundException.class)
-    public ResponseEntity<ErrorResponse> handleCountryNotFoundException(ActivityNotFoundExcepction anfe) {
+    @ExceptionHandler(ActivityNotFoundExcepction.class)
+    public ResponseEntity<ErrorResponse> handleActivityNotFoundException(ActivityNotFoundExcepction anfe) {
         logger.info("404: Activity not found");
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ErrorResponse.resourceNotFound(anfe.getMessage()));
     }
-    @ExceptionHandler(SessionNotFoundException.class)
-    public ResponseEntity<ErrorResponse> handleCountryNotFoundException(EmployeeNotFoundException enfe) {
+    @ExceptionHandler(EmployeeNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleEmployeeNotFoundException(EmployeeNotFoundException enfe) {
         logger.info("404: Employee not found");
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ErrorResponse.resourceNotFound(enfe.getMessage()));
     }
-    @ExceptionHandler(SessionNotFoundException.class)
-    public ResponseEntity<ErrorResponse> handleCountryNotFoundException(CustomerNotFoundException cnfe) {
+    @ExceptionHandler(CustomerNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleCustomerNotFoundException(CustomerNotFoundException cnfe) {
         logger.info("404: Customer not found");
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ErrorResponse.resourceNotFound(cnfe.getMessage()));
     }
