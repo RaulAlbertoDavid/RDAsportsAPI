@@ -1,5 +1,6 @@
 package com.rdacompany.RDAsportsAPI.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -41,6 +42,7 @@ public class Session {
     //Indicamos el tipo de relación, 1 sesion solo tendrán asociado un employee, pero un employee puede tener n sesiones
     // por eso es ManyToOne porque sesion es el lado n
     @ManyToOne
+
     //indica la columa por la que estaran relacionadas que tendra la clave ajena employee_id
     @JoinColumn(name = "employee_id")
     private Employee employee;
@@ -49,6 +51,7 @@ public class Session {
     //Indicamos el tipo de relación, 1 sesion solo tendrán asociado un area, pero un area puede tener n sesiones
     // por eso es ManyToOne porque sesion es el lado n
     @ManyToOne
+
     //indica la columa por la que estaran relacionadas que tendra la clave ajena area_id
     @JoinColumn(name = "area_id")
     private Area area;
@@ -57,6 +60,7 @@ public class Session {
     //Indicamos el tipo de relación, 1 sesion solo tendrán asociado una activity, pero una activity puede tener n sesiones
     // por eso es ManyToOne porque sesion es el lado n
     @ManyToOne
+
     //indica la columa por la que estaran relacionadas que tendra la clave ajena area_id
     @JoinColumn(name = "activity_id")
     private Activity activity;

@@ -3,6 +3,7 @@ package com.rdacompany.RDAsportsAPI.controller;
 import com.rdacompany.RDAsportsAPI.domain.Session;
 import com.rdacompany.RDAsportsAPI.domain.dto.SessionDto;
 import com.rdacompany.RDAsportsAPI.exception.AreaNotFoundException;
+import com.rdacompany.RDAsportsAPI.exception.SessionNotFoundException;
 import com.rdacompany.RDAsportsAPI.service.SessionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,8 +20,8 @@ public class SessionController {
     @Autowired
     private SessionService sessionService;
 
-    @PostMapping("/sesions")
-    public Session addSession (@RequestBody SessionDto sessionDto) throws AreaNotFoundException {
+    @PostMapping("/sessions")
+    public Session addSession (@RequestBody SessionDto sessionDto) throws SessionNotFoundException, AreaNotFoundException {
         logger.info("Inicio addSession");
         Session newSession = sessionService.addSession(sessionDto);
         logger.info("Fin addSession");
@@ -35,5 +36,28 @@ public class SessionController {
 
         return sessions;
     }
+
+    @GetMapping("/session/{sessionId}")
+    public Session getSession (@PathVariable int sessionId) throws SessionNotFoundException{
+        Session session = sessionService.findBySessionId(sessionId);
+        return session;
+    }
+
+    @DeleteMapping("/session/{sessionId}")
+    public Session deletSession (@PathVariable int sessionId) throws SessionNotFoundException{
+        logger.info("Inicio deleteSession");
+        Session session = sessionService.deleteSession(sessionId);
+        logger.info("Fin deleteSession");
+        return session;
+    }
+
+   /* @PutMapping("/session/{sessionId}")
+    public Session modifySession(@RequestBody Session session, @PathVariable int sessionId) throws SessionNotFoundException {
+        logger.info("Inicio modifySession");
+        Session newSession = sessionService.modifySession(sessionId, session);
+        logger.info("Inicio modifySession");
+        return  newSession;
+    }*/
+
 
 }

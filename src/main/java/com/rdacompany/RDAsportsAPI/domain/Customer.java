@@ -1,5 +1,6 @@
 package com.rdacompany.RDAsportsAPI.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -33,6 +34,7 @@ public class Customer {
 
     //como ya está relacionado en el otro lado aquí solo indico por que objeto tiene mapearse
     // 1 customer varias sesiones, pero 1 sesión solo 1 customer
+    @JsonBackReference
     @ManyToMany(mappedBy = "customers")
     private List<Session> sessions;
 }

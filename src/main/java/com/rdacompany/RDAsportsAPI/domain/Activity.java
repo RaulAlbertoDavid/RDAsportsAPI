@@ -32,6 +32,7 @@ public class Activity {
     //como ya está relacionado en el otro lado aquí solo indico por que objeto tiene que mapearse
     // 1 activity varias sesion, pero 1 sesion solo 1 activity
     @OneToMany(mappedBy = "activity")
+    @JsonBackReference
     private List<Session> sessions;
 
 }

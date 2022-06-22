@@ -16,4 +16,6 @@ public interface CustomerService {
     List<Customer> findAll();
 
     Customer findByCustomerId(int customerId);
+
+    Customer modifyCustomer(int customerId, Customer customer) throws CustomerNotFoundException;
 }

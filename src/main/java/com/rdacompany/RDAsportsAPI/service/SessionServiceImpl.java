@@ -6,6 +6,7 @@ import com.rdacompany.RDAsportsAPI.domain.Employee;
 import com.rdacompany.RDAsportsAPI.domain.Session;
 import com.rdacompany.RDAsportsAPI.domain.dto.SessionDto;
 import com.rdacompany.RDAsportsAPI.exception.AreaNotFoundException;
+import com.rdacompany.RDAsportsAPI.exception.SessionNotFoundException;
 import com.rdacompany.RDAsportsAPI.repository.ActivityRepository;
 import com.rdacompany.RDAsportsAPI.repository.AreaRepository;
 import com.rdacompany.RDAsportsAPI.repository.EmployeeRepository;
@@ -53,7 +54,6 @@ public class SessionServiceImpl implements SessionService{
         return sessionRepository.save(session);
     }
 
-
     @Override
     public List<Session> findAll() {
         return sessionRepository.findAll();
@@ -63,5 +63,23 @@ public class SessionServiceImpl implements SessionService{
     public Session findBySessionId(int sessionId) {
         return sessionRepository.findBySessionId(sessionId);
     }
+
+    @Override
+    public Session deleteSession(int sessionId) throws SessionNotFoundException {
+        Session session = sessionRepository.findById(sessionId)
+                .orElseThrow(SessionNotFoundException::new);
+        sessionRepository.delete(session);
+        return session;
+    }
+
+//    @Override
+//    public Session modifySession(int sessionId, Session newSession) throws SessionNotFoundException {
+//        Session session = sessionRepository.findById(sessionId)
+//                .orElseThrow(SessionNotFoundException::new);
+//
+//        ModelMapper mapper = new ModelMapper();
+//        session = mapper.map(newSession, Session.class);
+//        return sessionRepository.save(session);
+//    }
 
 }

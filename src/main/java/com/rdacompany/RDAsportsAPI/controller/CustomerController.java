@@ -56,12 +56,19 @@ public class CustomerController {
     }
 
     @GetMapping("/customers")
-    public List<Customer> getCustomers(){
+    public List<Customer> getCustomers() {
         List<Customer> customers;
         customers = customerService.findAll();
 
         return customers;
     }
+
+    @GetMapping("/customer/{customerId}")
+    public Customer getCustomerById(@PathVariable int customerId) {
+        Customer customer = customerService.findByCustomerId(customerId);
+        return customer;
+    }
+
 
     @DeleteMapping("/customer/{customerId}")
     public Customer removeCustomer(@PathVariable int customerId) throws CustomerNotFoundException {
@@ -69,7 +76,15 @@ public class CustomerController {
         Customer customer = customerService.removeCustomer(customerId);
         logger.info("Fin removeCustomer");
         return customer;
-
-
     }
+
+
+    @PutMapping("/customer/{customerId}")
+    public Customer modifyCustomer(@RequestBody Customer customer, @PathVariable int customerId) throws CustomerNotFoundException {
+        logger.info("Inicio modifyCustomer");
+        Customer newCustomer = customerService.modifyCustomer(customerId, customer);
+        logger.info("Fin modifyCustomer");
+        return newCustomer;
+    }
+
 }

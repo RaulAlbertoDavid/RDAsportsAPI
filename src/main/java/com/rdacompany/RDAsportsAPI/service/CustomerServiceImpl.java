@@ -5,6 +5,7 @@ import com.rdacompany.RDAsportsAPI.domain.Session;
 import com.rdacompany.RDAsportsAPI.exception.CustomerNotFoundException;
 import com.rdacompany.RDAsportsAPI.repository.CustomerRepository;
 import com.rdacompany.RDAsportsAPI.repository.SessionRepository;
+import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,6 +51,16 @@ public class CustomerServiceImpl implements CustomerService{
     @Override
     public Customer findByCustomerId(int customerId) {
         return customerRepository.findByCustomerId(customerId);
+    }
+
+    @Override
+    public Customer modifyCustomer(int customerId, Customer newCustomer) throws CustomerNotFoundException{
+        Customer customer = customerRepository.findById(customerId)
+                .orElseThrow(CustomerNotFoundException::new);
+
+        ModelMapper mapper = new ModelMapper();
+        customer = mapper.map(newCustomer, Customer.class);
+        return customerRepository.save(customer);
     }
 
 
