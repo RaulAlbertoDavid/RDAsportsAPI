@@ -4,6 +4,7 @@ package com.rdacompany.RDAsportsAPI.service;
 import com.rdacompany.RDAsportsAPI.domain.Employee;
 import com.rdacompany.RDAsportsAPI.exception.EmployeeNotFoundException;
 import com.rdacompany.RDAsportsAPI.repository.EmployeeRepository;
+import com.rdacompany.RDAsportsAPI.repository.SessionRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,9 @@ public class EmployeeServiceImpl implements EmployeeService{
 
     @Autowired
     private EmployeeRepository employeeRepository;
+
+    @Autowired
+    private SessionRepository sessionRepository;
 
     @Override
     public Employee addEmployee(Employee employee) {
@@ -30,8 +34,9 @@ public class EmployeeServiceImpl implements EmployeeService{
     public Employee deleteEmployee(int employeeId) throws EmployeeNotFoundException {
         Employee employee = employeeRepository.findById(employeeId).
                 orElseThrow(EmployeeNotFoundException::new);
-        employee.getSessions().forEach(session -> session.getCustomers().stream().filter(employee1 -> employee1.equals(employee)));
+        employee.getSessions().forEach(session -> sessionRepository.delete(session));
         employeeRepository.delete(employee);
+
         return employee;
     }
 

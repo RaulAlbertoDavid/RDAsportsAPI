@@ -3969,117 +3969,39 @@ java.lang.IllegalStateException: Ambiguous @ExceptionHandler method mapped for [
 2022-06-22 19:53:29,260 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-10] 404: Session not found
 2022-06-22 19:55:15,164 INFO com.rdacompany.RDAsportsAPI.controller.ActivityController [http-nio-8081-exec-4] Inicio deleteActivity
 2022-06-22 19:55:15,169 INFO com.rdacompany.RDAsportsAPI.controller.ActivityController [http-nio-8081-exec-4] 404: Activity not found
-2022-06-23 16:39:05,919 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
-2022-06-23 16:39:05,919 INFO org.springframework.boot.StartupInfoLogger [main] Starting RdAsportsApplication using Java 11.0.11 on Alberto with PID 16356 (C:\Users\alber\RDAsportsAPI\target\classes started by alber in C:\Users\alber\RDAsportsAPI)
-2022-06-23 16:39:05,919 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
-2022-06-23 16:39:06,873 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-06-23 16:39:06,953 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 81 ms. Found 5 JPA repository interfaces.
-2022-06-23 16:39:08,139 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
-2022-06-23 16:39:08,139 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
-2022-06-23 16:39:08,154 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2022-06-23 16:39:08,154 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
-2022-06-23 16:39:08,337 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2022-06-23 16:39:08,337 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2356 ms
-2022-06-23 16:39:08,520 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-06-23 16:39:08,567 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
-2022-06-23 16:39:08,749 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-06-23 16:39:08,870 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2022-06-23 16:39:08,870 WARN com.zaxxer.hikari.util.DriverDataSource [main] Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2022-06-23 16:39:09,052 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2022-06-23 16:39:09,068 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
-2022-06-23 16:39:10,010 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-06-23 16:39:10,025 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-06-23 16:39:10,452 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-06-23 16:39:10,786 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
-2022-06-23 16:39:10,833 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path ''
-2022-06-23 16:39:10,848 INFO org.springframework.boot.StartupInfoLogger [main] Started RdAsportsApplication in 5.418 seconds (JVM running for 6.24)
-2022-06-23 16:39:57,552 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-06-23 16:39:57,553 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
-2022-06-23 16:39:57,555 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Completed initialization in 2 ms
-2022-06-23 16:39:57,643 INFO com.rdacompany.RDAsportsAPI.controller.CustomerController [http-nio-8081-exec-1] 404: Customer not found
-2022-06-23 16:40:30,015 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-5] Fin consulta de todas las session
-2022-06-23 16:40:48,926 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-6] Inicio modifySession
-2022-06-23 16:40:49,037 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-6] Fin modifySession
-2022-06-23 16:40:58,364 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-7] Fin consulta de todas las session
-2022-06-23 16:41:22,076 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-8] Inicio modifySession
-2022-06-23 16:41:22,126 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-8] Fin modifySession
-2022-06-23 16:42:41,050 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-2] Inicio modifySession
-2022-06-23 16:42:41,081 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-2] Fin modifySession
-2022-06-23 16:42:48,290 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-1] Fin consulta de todas las session
-2022-06-23 16:44:21,966 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-5] Inicio modifySession
-2022-06-23 16:44:21,994 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-5] Fin modifySession
-2022-06-23 16:44:36,094 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-6] Fin getEmployees
-2022-06-23 16:49:36,791 INFO org.springframework.boot.StartupInfoLogger [main] Starting RdAsportsApplication using Java 11.0.11 on Alberto with PID 24644 (C:\Users\alber\RDAsportsAPI\target\classes started by alber in C:\Users\alber\RDAsportsAPI)
-2022-06-23 16:49:36,775 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
-2022-06-23 16:49:36,791 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
-2022-06-23 16:49:37,719 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-06-23 16:49:37,857 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 115 ms. Found 5 JPA repository interfaces.
-2022-06-23 16:49:39,406 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
-2022-06-23 16:49:39,422 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
-2022-06-23 16:49:39,422 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2022-06-23 16:49:39,422 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
-2022-06-23 16:49:39,711 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2022-06-23 16:49:39,711 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2858 ms
-2022-06-23 16:49:39,877 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-06-23 16:49:39,940 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
-2022-06-23 16:49:40,091 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-06-23 16:49:40,225 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2022-06-23 16:49:40,227 WARN com.zaxxer.hikari.util.DriverDataSource [main] Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2022-06-23 16:49:40,394 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2022-06-23 16:49:40,409 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
-2022-06-23 16:49:41,339 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-06-23 16:49:41,355 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-06-23 16:49:41,809 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-06-23 16:49:42,183 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
-2022-06-23 16:49:42,237 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path ''
-2022-06-23 16:49:42,258 INFO org.springframework.boot.StartupInfoLogger [main] Started RdAsportsApplication in 6.03 seconds (JVM running for 6.955)
-2022-06-23 16:51:51,349 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-06-23 16:51:51,349 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
-2022-06-23 16:51:51,351 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Completed initialization in 1 ms
-2022-06-23 16:51:51,485 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-1] Inicio modifySession
-2022-06-23 16:51:51,700 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-1] Fin modifySession
-2022-06-23 16:52:05,659 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-3] Inicio modifySession
-2022-06-23 16:52:05,678 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-3] Fin modifySession
-2022-06-23 16:52:21,382 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-4] Inicio modifySession
-2022-06-23 16:52:21,402 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-4] Fin modifySession
-2022-06-23 16:52:56,560 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-5] Inicio modifySession
-2022-06-23 16:52:56,579 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-5] Fin modifySession
-2022-06-23 17:58:35,575 INFO com.rdacompany.RDAsportsAPI.controller.CustomerController [http-nio-8081-exec-7] 404: Customer not found
-2022-06-23 19:17:25,800 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
-2022-06-23 19:17:25,803 INFO org.springframework.boot.StartupInfoLogger [main] Starting RdAsportsApplication using Java 11.0.11 on Raul with PID 11144 (C:\Users\r_mar\Desktop\RDAsportsAPI\target\classes started by Raul in C:\Users\r_mar\Desktop\RDAsportsAPI)
-2022-06-23 19:17:25,804 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
-2022-06-23 19:17:26,176 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-06-23 19:17:26,219 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 37 ms. Found 5 JPA repository interfaces.
-2022-06-23 19:17:26,636 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
-2022-06-23 19:17:26,642 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
-2022-06-23 19:17:26,642 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2022-06-23 19:17:26,643 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
-2022-06-23 19:17:26,727 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2022-06-23 19:17:26,728 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 894 ms
-2022-06-23 19:17:26,805 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-06-23 19:17:26,831 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
-2022-06-23 19:17:26,901 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-06-23 19:17:26,955 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2022-06-23 19:17:26,958 WARN com.zaxxer.hikari.util.DriverDataSource [main] Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2022-06-23 19:17:27,050 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2022-06-23 19:17:27,062 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
-2022-06-23 19:17:27,473 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-06-23 19:17:27,478 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-06-23 19:17:27,692 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-06-23 19:17:27,872 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
-2022-06-23 19:17:27,885 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path ''
-2022-06-23 19:17:27,891 INFO org.springframework.boot.StartupInfoLogger [main] Started RdAsportsApplication in 2.304 seconds (JVM running for 2.657)
-2022-06-23 19:18:01,451 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-06-23 19:18:01,451 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
-2022-06-23 19:18:01,452 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Completed initialization in 1 ms
-2022-06-23 19:18:01,577 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-3] Fin getEmployees
-2022-06-23 19:18:15,414 INFO com.rdacompany.RDAsportsAPI.controller.CustomerController [http-nio-8081-exec-2] Inicio removeCustomer
-2022-06-23 19:18:15,446 INFO com.rdacompany.RDAsportsAPI.controller.CustomerController [http-nio-8081-exec-2] Fin removeCustomer
-2022-06-23 19:18:22,207 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-8] Inicio deleteEmployee
-2022-06-23 19:18:22,223 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8081-exec-8] SQL Error: 1451, SQLState: 23000
-2022-06-23 19:18:22,224 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8081-exec-8] Cannot delete or update a parent row: a foreign key constraint fails (`rdasportsdb`.`sessions`, CONSTRAINT `FKne2of4kicmak5javvb2wk9jon` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`employee_id`))
-2022-06-23 19:18:22,225 INFO org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl [http-nio-8081-exec-8] HHH000010: On release of batch it still contained JDBC statements
-2022-06-23 19:18:22,238 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-8] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [null]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement] with root cause
+2022-06-22 20:06:06,300 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2022-06-22 20:06:06,303 INFO org.springframework.boot.StartupInfoLogger [main] Starting RdAsportsApplication using Java 11.0.11 on Raul with PID 13120 (C:\Users\r_mar\Desktop\RDAsportsAPI\target\classes started by Raul in C:\Users\r_mar\Desktop\RDAsportsAPI)
+2022-06-22 20:06:06,304 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-06-22 20:06:06,695 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-22 20:06:06,739 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 38 ms. Found 5 JPA repository interfaces.
+2022-06-22 20:06:07,166 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
+2022-06-22 20:06:07,172 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2022-06-22 20:06:07,173 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2022-06-22 20:06:07,173 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-22 20:06:07,295 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2022-06-22 20:06:07,295 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 966 ms
+2022-06-22 20:06:07,377 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-22 20:06:07,405 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-06-22 20:06:07,477 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-22 20:06:07,528 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-06-22 20:06:07,530 WARN com.zaxxer.hikari.util.DriverDataSource [main] Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2022-06-22 20:06:07,622 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-06-22 20:06:07,632 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2022-06-22 20:06:08,046 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-22 20:06:08,052 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-22 20:06:08,264 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-22 20:06:08,503 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2022-06-22 20:06:08,531 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path ''
+2022-06-22 20:06:08,538 INFO org.springframework.boot.StartupInfoLogger [main] Started RdAsportsApplication in 2.46 seconds (JVM running for 2.845)
+2022-06-22 20:06:13,363 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-22 20:06:13,363 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-06-22 20:06:13,364 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Completed initialization in 0 ms
+2022-06-22 20:06:13,493 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-2] Fin getEmployees
+2022-06-22 20:06:17,384 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-5] Inicio deleteEmployee
+2022-06-22 20:06:17,432 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8081-exec-5] SQL Error: 1451, SQLState: 23000
+2022-06-22 20:06:17,433 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8081-exec-5] Cannot delete or update a parent row: a foreign key constraint fails (`rdasportsdb`.`sessions`, CONSTRAINT `FKne2of4kicmak5javvb2wk9jon` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`employee_id`))
+2022-06-22 20:06:17,434 INFO org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl [http-nio-8081-exec-5] HHH000010: On release of batch it still contained JDBC statements
+2022-06-22 20:06:17,450 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-5] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [null]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement] with root cause
 java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`rdasportsdb`.`sessions`, CONSTRAINT `FKne2of4kicmak5javvb2wk9jon` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`employee_id`))
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
 	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
@@ -4125,7 +4047,7 @@ java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a par
 	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
-	at com.sun.proxy.$Proxy122.delete(Unknown Source)
+	at com.sun.proxy.$Proxy120.delete(Unknown Source)
 	at com.rdacompany.RDAsportsAPI.service.EmployeeServiceImpl.deleteEmployee(EmployeeServiceImpl.java:34)
 	at com.rdacompany.RDAsportsAPI.controller.EmployeeController.deleteEmployee(EmployeeController.java:47)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -4178,12 +4100,13 @@ java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a par
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:834)
-2022-06-23 19:18:22,255 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-10] Fin getEmployees
-2022-06-23 19:18:28,033 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-7] Inicio deleteEmployee
-2022-06-23 19:18:28,038 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8081-exec-7] SQL Error: 1451, SQLState: 23000
-2022-06-23 19:18:28,038 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8081-exec-7] Cannot delete or update a parent row: a foreign key constraint fails (`rdasportsdb`.`sessions`, CONSTRAINT `FKne2of4kicmak5javvb2wk9jon` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`employee_id`))
-2022-06-23 19:18:28,038 INFO org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl [http-nio-8081-exec-7] HHH000010: On release of batch it still contained JDBC statements
-2022-06-23 19:18:28,042 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-7] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [null]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement] with root cause
+2022-06-22 20:06:17,469 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-4] Fin getEmployees
+2022-06-22 20:07:56,816 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-7] Fin getEmployees
+2022-06-22 20:07:59,932 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-8] Inicio deleteEmployee
+2022-06-22 20:07:59,939 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8081-exec-8] SQL Error: 1451, SQLState: 23000
+2022-06-22 20:07:59,940 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8081-exec-8] Cannot delete or update a parent row: a foreign key constraint fails (`rdasportsdb`.`sessions`, CONSTRAINT `FKne2of4kicmak5javvb2wk9jon` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`employee_id`))
+2022-06-22 20:07:59,940 INFO org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl [http-nio-8081-exec-8] HHH000010: On release of batch it still contained JDBC statements
+2022-06-22 20:07:59,945 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-8] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [null]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement] with root cause
 java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`rdasportsdb`.`sessions`, CONSTRAINT `FKne2of4kicmak5javvb2wk9jon` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`employee_id`))
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
 	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
@@ -4229,7 +4152,7 @@ java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a par
 	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
-	at com.sun.proxy.$Proxy122.delete(Unknown Source)
+	at com.sun.proxy.$Proxy120.delete(Unknown Source)
 	at com.rdacompany.RDAsportsAPI.service.EmployeeServiceImpl.deleteEmployee(EmployeeServiceImpl.java:34)
 	at com.rdacompany.RDAsportsAPI.controller.EmployeeController.deleteEmployee(EmployeeController.java:47)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -4282,42 +4205,19 @@ java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a par
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:834)
-2022-06-23 19:18:28,048 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-6] Fin getEmployees
-2022-06-23 19:19:28,180 INFO com.rdacompany.RDAsportsAPI.controller.CustomerController [http-nio-8081-exec-9] Inicio removeCustomer
-2022-06-23 19:19:28,203 INFO com.rdacompany.RDAsportsAPI.controller.CustomerController [http-nio-8081-exec-9] Fin removeCustomer
-2022-06-23 19:20:48,997 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
-2022-06-23 19:20:48,999 INFO org.springframework.boot.StartupInfoLogger [main] Starting RdAsportsApplication using Java 11.0.11 on Raul with PID 7816 (C:\Users\r_mar\Desktop\RDAsportsAPI\target\classes started by Raul in C:\Users\r_mar\Desktop\RDAsportsAPI)
-2022-06-23 19:20:49,000 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
-2022-06-23 19:20:49,401 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-06-23 19:20:49,442 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 35 ms. Found 5 JPA repository interfaces.
-2022-06-23 19:20:49,864 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
-2022-06-23 19:20:49,870 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
-2022-06-23 19:20:49,871 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2022-06-23 19:20:49,872 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
-2022-06-23 19:20:49,956 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2022-06-23 19:20:49,956 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 931 ms
-2022-06-23 19:20:50,034 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-06-23 19:20:50,061 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
-2022-06-23 19:20:50,136 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-06-23 19:20:50,190 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2022-06-23 19:20:50,192 WARN com.zaxxer.hikari.util.DriverDataSource [main] Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2022-06-23 19:20:50,284 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2022-06-23 19:20:50,294 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
-2022-06-23 19:20:50,740 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-06-23 19:20:50,745 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-06-23 19:20:50,976 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-06-23 19:20:51,149 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
-2022-06-23 19:20:51,163 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path ''
-2022-06-23 19:20:51,169 INFO org.springframework.boot.StartupInfoLogger [main] Started RdAsportsApplication in 2.381 seconds (JVM running for 2.721)
-2022-06-23 19:20:57,748 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-06-23 19:20:57,748 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
-2022-06-23 19:20:57,750 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Completed initialization in 1 ms
-2022-06-23 19:20:57,771 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-1] Inicio deleteEmployee
-2022-06-23 19:20:57,828 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8081-exec-1] SQL Error: 1451, SQLState: 23000
-2022-06-23 19:20:57,828 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8081-exec-1] Cannot delete or update a parent row: a foreign key constraint fails (`rdasportsdb`.`sessions`, CONSTRAINT `FKne2of4kicmak5javvb2wk9jon` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`employee_id`))
-2022-06-23 19:20:57,830 INFO org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl [http-nio-8081-exec-1] HHH000010: On release of batch it still contained JDBC statements
-2022-06-23 19:20:57,846 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-1] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [null]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement] with root cause
-java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`rdasportsdb`.`sessions`, CONSTRAINT `FKne2of4kicmak5javvb2wk9jon` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`employee_id`))
+2022-06-22 20:07:59,952 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-9] Fin getEmployees
+2022-06-22 20:08:05,951 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-10] Inicio deleteEmployee
+2022-06-22 20:08:05,959 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-10] Fin deleteEmployee
+2022-06-22 20:08:05,978 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-1] Fin getEmployees
+2022-06-22 20:08:14,239 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-2] Inicio deleteEmployee
+2022-06-22 20:08:14,245 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-2] Fin deleteEmployee
+2022-06-22 20:08:14,262 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-5] Fin getEmployees
+2022-06-22 20:08:23,458 INFO com.rdacompany.RDAsportsAPI.controller.CustomerController [http-nio-8081-exec-4] Inicio removeCustomer
+2022-06-22 20:08:23,465 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8081-exec-4] SQL Error: 1451, SQLState: 23000
+2022-06-22 20:08:23,465 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8081-exec-4] Cannot delete or update a parent row: a foreign key constraint fails (`rdasportsdb`.`sessions_customers`, CONSTRAINT `FK9tmic88b3mjvhjt96lkj2vheg` FOREIGN KEY (`customers_customer_id`) REFERENCES `customers` (`customer_id`))
+2022-06-22 20:08:23,466 INFO org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl [http-nio-8081-exec-4] HHH000010: On release of batch it still contained JDBC statements
+2022-06-22 20:08:23,469 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-4] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [null]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement] with root cause
+java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`rdasportsdb`.`sessions_customers`, CONSTRAINT `FK9tmic88b3mjvhjt96lkj2vheg` FOREIGN KEY (`customers_customer_id`) REFERENCES `customers` (`customer_id`))
 	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
 	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
@@ -4362,9 +4262,9 @@ java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a par
 	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
-	at com.sun.proxy.$Proxy122.delete(Unknown Source)
-	at com.rdacompany.RDAsportsAPI.service.EmployeeServiceImpl.deleteEmployee(EmployeeServiceImpl.java:34)
-	at com.rdacompany.RDAsportsAPI.controller.EmployeeController.deleteEmployee(EmployeeController.java:47)
+	at com.sun.proxy.$Proxy118.delete(Unknown Source)
+	at com.rdacompany.RDAsportsAPI.service.CustomerServiceImpl.deleteCustomer(CustomerServiceImpl.java:73)
+	at com.rdacompany.RDAsportsAPI.controller.CustomerController.deleteCustomer(CustomerController.java:76)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -4415,165 +4315,5 @@ java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a par
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:834)
-2022-06-23 19:20:57,951 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-2] Fin getEmployees
-2022-06-23 19:21:55,694 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
-2022-06-23 19:21:55,697 INFO org.springframework.boot.StartupInfoLogger [main] Starting RdAsportsApplication using Java 11.0.11 on Raul with PID 18000 (C:\Users\r_mar\Desktop\RDAsportsAPI\target\classes started by Raul in C:\Users\r_mar\Desktop\RDAsportsAPI)
-2022-06-23 19:21:55,698 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
-2022-06-23 19:21:56,123 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-06-23 19:21:56,171 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 41 ms. Found 5 JPA repository interfaces.
-2022-06-23 19:21:56,584 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
-2022-06-23 19:21:56,591 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
-2022-06-23 19:21:56,591 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2022-06-23 19:21:56,592 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
-2022-06-23 19:21:56,682 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2022-06-23 19:21:56,683 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 959 ms
-2022-06-23 19:21:56,769 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-06-23 19:21:56,793 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
-2022-06-23 19:21:56,865 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-06-23 19:21:56,914 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2022-06-23 19:21:56,917 WARN com.zaxxer.hikari.util.DriverDataSource [main] Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2022-06-23 19:21:57,007 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2022-06-23 19:21:57,016 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
-2022-06-23 19:21:57,441 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-06-23 19:21:57,446 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-06-23 19:21:57,666 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-06-23 19:21:57,837 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
-2022-06-23 19:21:57,850 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path ''
-2022-06-23 19:21:57,856 INFO org.springframework.boot.StartupInfoLogger [main] Started RdAsportsApplication in 2.379 seconds (JVM running for 2.722)
-2022-06-23 19:22:00,247 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-06-23 19:22:00,247 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
-2022-06-23 19:22:00,248 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Completed initialization in 0 ms
-2022-06-23 19:22:00,271 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-1] Inicio deleteEmployee
-2022-06-23 19:22:00,331 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8081-exec-1] SQL Error: 1451, SQLState: 23000
-2022-06-23 19:22:00,331 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8081-exec-1] Cannot delete or update a parent row: a foreign key constraint fails (`rdasportsdb`.`sessions`, CONSTRAINT `FKne2of4kicmak5javvb2wk9jon` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`employee_id`))
-2022-06-23 19:22:00,332 INFO org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl [http-nio-8081-exec-1] HHH000010: On release of batch it still contained JDBC statements
-2022-06-23 19:22:00,347 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-1] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [null]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement] with root cause
-java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`rdasportsdb`.`sessions`, CONSTRAINT `FKne2of4kicmak5javvb2wk9jon` FOREIGN KEY (`employee_id`) REFERENCES `employees` (`employee_id`))
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
-	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
-	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061)
-	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
-	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
-	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
-	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
-	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
-	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197)
-	at org.hibernate.engine.jdbc.batch.internal.NonBatchingBatch.addToBatch(NonBatchingBatch.java:46)
-	at org.hibernate.persister.entity.AbstractEntityPersister.delete(AbstractEntityPersister.java:3698)
-	at org.hibernate.persister.entity.AbstractEntityPersister.delete(AbstractEntityPersister.java:3958)
-	at org.hibernate.action.internal.EntityDeleteAction.execute(EntityDeleteAction.java:123)
-	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604)
-	at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:478)
-	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
-	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:475)
-	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:344)
-	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40)
-	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:107)
-	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1407)
-	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:489)
-	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3290)
-	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2425)
-	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:449)
-	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183)
-	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40)
-	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)
-	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
-	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562)
-	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:743)
-	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:711)
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:654)
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:407)
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215)
-	at com.sun.proxy.$Proxy122.delete(Unknown Source)
-	at com.rdacompany.RDAsportsAPI.service.EmployeeServiceImpl.deleteEmployee(EmployeeServiceImpl.java:33)
-	at com.rdacompany.RDAsportsAPI.controller.EmployeeController.deleteEmployee(EmployeeController.java:47)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:931)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.base/java.lang.Thread.run(Thread.java:834)
-2022-06-23 19:22:00,443 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-2] Fin getEmployees
-2022-06-23 19:23:13,445 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
-2022-06-23 19:23:13,449 INFO org.springframework.boot.StartupInfoLogger [main] Starting RdAsportsApplication using Java 11.0.11 on Raul with PID 11836 (C:\Users\r_mar\Desktop\RDAsportsAPI\target\classes started by Raul in C:\Users\r_mar\Desktop\RDAsportsAPI)
-2022-06-23 19:23:13,451 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
-2022-06-23 19:23:13,851 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-06-23 19:23:13,893 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 38 ms. Found 5 JPA repository interfaces.
-2022-06-23 19:23:14,327 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
-2022-06-23 19:23:14,334 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
-2022-06-23 19:23:14,335 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2022-06-23 19:23:14,335 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
-2022-06-23 19:23:14,420 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2022-06-23 19:23:14,420 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 939 ms
-2022-06-23 19:23:14,509 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-06-23 19:23:14,534 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
-2022-06-23 19:23:14,610 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-06-23 19:23:14,665 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2022-06-23 19:23:14,668 WARN com.zaxxer.hikari.util.DriverDataSource [main] Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2022-06-23 19:23:14,751 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2022-06-23 19:23:14,761 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
-2022-06-23 19:23:15,206 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-06-23 19:23:15,211 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-06-23 19:23:15,432 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-06-23 19:23:15,625 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
-2022-06-23 19:23:15,638 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path ''
-2022-06-23 19:23:15,645 INFO org.springframework.boot.StartupInfoLogger [main] Started RdAsportsApplication in 2.453 seconds (JVM running for 2.813)
-2022-06-23 19:23:26,170 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-06-23 19:23:26,171 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
-2022-06-23 19:23:26,173 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Completed initialization in 1 ms
-2022-06-23 19:23:26,198 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-1] Inicio deleteEmployee
-2022-06-23 19:23:26,282 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-1] Fin deleteEmployee
-2022-06-23 19:23:26,391 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-3] Fin getEmployees
+2022-06-22 20:08:27,305 INFO com.rdacompany.RDAsportsAPI.controller.CustomerController [http-nio-8081-exec-6] Inicio removeCustomer
+2022-06-22 20:08:27,311 INFO com.rdacompany.RDAsportsAPI.controller.CustomerController [http-nio-8081-exec-6] Fin removeCustomer
