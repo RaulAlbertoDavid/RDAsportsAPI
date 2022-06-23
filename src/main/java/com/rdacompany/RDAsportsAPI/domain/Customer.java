@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.awt.geom.NoninvertibleTransformException;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -21,10 +23,13 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int customerId;
     @Column
+    @NotNull
     private String name;
     @Column
+    @NotNull
     private String email;
     @Column
+    @NotNull
     private String password;
     @Column
     private String phone;

@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 
@@ -19,10 +20,13 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int employeeId;
     @Column
+    @NotNull
     private String name;
     @Column
+    @NotNull
     private String email;
     @Column
+    @NotNull
     private String password;
     @Column
     private String phone;

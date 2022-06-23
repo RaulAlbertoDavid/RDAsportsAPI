@@ -24,14 +24,14 @@ public class SessionServiceImpl implements SessionService{
     @Autowired
     private CustomerRepository customerRepository;
     @Override
-    public Session addSession(SessionDto sessionDto) throws AreaNotFoundException {
+    public Session addSession(SessionDto sessionDto) throws AreaNotFoundException, ActivityNotFoundExcepction, EmployeeNotFoundException {
         //tengo que recuperar los objetos enteros para pasarlos a la base de datos no solo el id
         Area area = areaRepository.findById(sessionDto.getArea())
                 .orElseThrow(AreaNotFoundException::new);
         Activity activity = activityRepository.findById(sessionDto.getActivity())
-                .orElseThrow(AreaNotFoundException::new);
+                .orElseThrow(ActivityNotFoundExcepction::new);
         Employee employee = employeeRepository.findById(sessionDto.getEmployee())
-                .orElseThrow(AreaNotFoundException::new);
+                .orElseThrow(EmployeeNotFoundException::new);
         /*
         vamos a utilizar un mapeador(introducir dependencia modelmapper) para no tener que ir indicandolo al
         nuevo objeto todos los atributos
@@ -69,7 +69,7 @@ public class SessionServiceImpl implements SessionService{
     }
 
    @Override
-   public Session modifySession(int sessionId, SessionDto newSessionDto) throws SessionNotFoundException, EmployeeNotFoundException, ActivityNotFoundExcepction, AreaNotFoundException {
+   public Session modifySession(int sessionId, SessionDto newSessionDto) throws SessionNotFoundException, ActivityNotFoundExcepction, AreaNotFoundException, EmployeeNotFoundException {
        Session session = sessionRepository.findById(sessionId)
                 .orElseThrow(SessionNotFoundException::new);
 

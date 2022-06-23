@@ -3969,3 +3969,79 @@ java.lang.IllegalStateException: Ambiguous @ExceptionHandler method mapped for [
 2022-06-22 19:53:29,260 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-10] 404: Session not found
 2022-06-22 19:55:15,164 INFO com.rdacompany.RDAsportsAPI.controller.ActivityController [http-nio-8081-exec-4] Inicio deleteActivity
 2022-06-22 19:55:15,169 INFO com.rdacompany.RDAsportsAPI.controller.ActivityController [http-nio-8081-exec-4] 404: Activity not found
+2022-06-23 16:39:05,919 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2022-06-23 16:39:05,919 INFO org.springframework.boot.StartupInfoLogger [main] Starting RdAsportsApplication using Java 11.0.11 on Alberto with PID 16356 (C:\Users\alber\RDAsportsAPI\target\classes started by alber in C:\Users\alber\RDAsportsAPI)
+2022-06-23 16:39:05,919 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-06-23 16:39:06,873 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-23 16:39:06,953 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 81 ms. Found 5 JPA repository interfaces.
+2022-06-23 16:39:08,139 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
+2022-06-23 16:39:08,139 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2022-06-23 16:39:08,154 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2022-06-23 16:39:08,154 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-23 16:39:08,337 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2022-06-23 16:39:08,337 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2356 ms
+2022-06-23 16:39:08,520 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-23 16:39:08,567 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-06-23 16:39:08,749 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-23 16:39:08,870 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-06-23 16:39:08,870 WARN com.zaxxer.hikari.util.DriverDataSource [main] Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2022-06-23 16:39:09,052 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-06-23 16:39:09,068 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2022-06-23 16:39:10,010 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-23 16:39:10,025 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-23 16:39:10,452 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-23 16:39:10,786 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2022-06-23 16:39:10,833 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path ''
+2022-06-23 16:39:10,848 INFO org.springframework.boot.StartupInfoLogger [main] Started RdAsportsApplication in 5.418 seconds (JVM running for 6.24)
+2022-06-23 16:39:57,552 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-23 16:39:57,553 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-06-23 16:39:57,555 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Completed initialization in 2 ms
+2022-06-23 16:39:57,643 INFO com.rdacompany.RDAsportsAPI.controller.CustomerController [http-nio-8081-exec-1] 404: Customer not found
+2022-06-23 16:40:30,015 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-5] Fin consulta de todas las session
+2022-06-23 16:40:48,926 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-6] Inicio modifySession
+2022-06-23 16:40:49,037 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-6] Fin modifySession
+2022-06-23 16:40:58,364 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-7] Fin consulta de todas las session
+2022-06-23 16:41:22,076 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-8] Inicio modifySession
+2022-06-23 16:41:22,126 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-8] Fin modifySession
+2022-06-23 16:42:41,050 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-2] Inicio modifySession
+2022-06-23 16:42:41,081 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-2] Fin modifySession
+2022-06-23 16:42:48,290 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-1] Fin consulta de todas las session
+2022-06-23 16:44:21,966 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-5] Inicio modifySession
+2022-06-23 16:44:21,994 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-5] Fin modifySession
+2022-06-23 16:44:36,094 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-6] Fin getEmployees
+2022-06-23 16:49:36,791 INFO org.springframework.boot.StartupInfoLogger [main] Starting RdAsportsApplication using Java 11.0.11 on Alberto with PID 24644 (C:\Users\alber\RDAsportsAPI\target\classes started by alber in C:\Users\alber\RDAsportsAPI)
+2022-06-23 16:49:36,775 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2022-06-23 16:49:36,791 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-06-23 16:49:37,719 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-23 16:49:37,857 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 115 ms. Found 5 JPA repository interfaces.
+2022-06-23 16:49:39,406 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
+2022-06-23 16:49:39,422 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2022-06-23 16:49:39,422 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2022-06-23 16:49:39,422 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-23 16:49:39,711 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2022-06-23 16:49:39,711 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2858 ms
+2022-06-23 16:49:39,877 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-23 16:49:39,940 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-06-23 16:49:40,091 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-23 16:49:40,225 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-06-23 16:49:40,227 WARN com.zaxxer.hikari.util.DriverDataSource [main] Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2022-06-23 16:49:40,394 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-06-23 16:49:40,409 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2022-06-23 16:49:41,339 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-23 16:49:41,355 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-23 16:49:41,809 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-23 16:49:42,183 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2022-06-23 16:49:42,237 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path ''
+2022-06-23 16:49:42,258 INFO org.springframework.boot.StartupInfoLogger [main] Started RdAsportsApplication in 6.03 seconds (JVM running for 6.955)
+2022-06-23 16:51:51,349 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-23 16:51:51,349 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-06-23 16:51:51,351 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Completed initialization in 1 ms
+2022-06-23 16:51:51,485 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-1] Inicio modifySession
+2022-06-23 16:51:51,700 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-1] Fin modifySession
+2022-06-23 16:52:05,659 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-3] Inicio modifySession
+2022-06-23 16:52:05,678 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-3] Fin modifySession
+2022-06-23 16:52:21,382 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-4] Inicio modifySession
+2022-06-23 16:52:21,402 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-4] Fin modifySession
+2022-06-23 16:52:56,560 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-5] Inicio modifySession
+2022-06-23 16:52:56,579 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-5] Fin modifySession
+2022-06-23 17:58:35,575 INFO com.rdacompany.RDAsportsAPI.controller.CustomerController [http-nio-8081-exec-7] 404: Customer not found

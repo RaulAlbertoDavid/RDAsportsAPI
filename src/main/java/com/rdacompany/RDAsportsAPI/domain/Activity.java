@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -21,6 +22,7 @@ public class Activity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int activityId;
     @Column
+    @NotNull
     private String name;
     @Column
     private String description;

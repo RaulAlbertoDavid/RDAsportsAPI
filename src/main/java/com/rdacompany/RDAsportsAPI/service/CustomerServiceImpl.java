@@ -69,7 +69,10 @@ public class CustomerServiceImpl implements CustomerService{
     public Customer deleteCustomer(int customerId) throws CustomerNotFoundException {
         Customer customer = customerRepository.findById(customerId).
                 orElseThrow(CustomerNotFoundException::new);
-        customer.getSessions().forEach(session -> session.getCustomers().stream().filter(customer1 -> customer1.equals(customer)));
+        customer.getSessions().forEach(session -> {
+            session.getCustomers().remove(customer);
+            sessionRepository.save(session);
+        });
         customerRepository.delete(customer);
         return customer;
     }

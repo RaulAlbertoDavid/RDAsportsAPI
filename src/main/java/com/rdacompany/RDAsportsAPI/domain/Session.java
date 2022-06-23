@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -49,12 +50,14 @@ public class Session {
     @ManyToOne
     //indica la columa por la que estaran relacionadas que tendra la clave ajena area_id
     @JoinColumn(name = "area_id")
+    @NotNull
     private Area area;
 
     //Debemos establecer como se relaciona con las activities
     //Indicamos el tipo de relación, 1 sesion solo tendrán asociado una activity, pero una activity puede tener n sesiones
     // por eso es ManyToOne porque sesion es el lado n
     @ManyToOne
+    @NotNull
     //indica la columa por la que estaran relacionadas que tendra la clave ajena area_id
     @JoinColumn(name = "activity_id")
     private Activity activity;

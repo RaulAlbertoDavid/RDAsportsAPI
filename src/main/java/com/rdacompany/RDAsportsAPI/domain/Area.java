@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 
@@ -19,8 +20,10 @@ public class Area {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int areaId;
     @Column
+    @NotNull
     private int number;
     @Column
+    @NotNull
     private String name;
     @Column
     private String description;
