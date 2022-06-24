@@ -1,0 +1,1374 @@
+openapi: 3.0.2
+servers:
+  - url: /rdasports
+info:
+  title: RDAsports API
+  description: API para la aplicación RDAsports.
+  version: "1.0"
+tags:
+  - name: customers
+    description: Operaciones con clientes.
+  - name: employees
+    description: Operaciones con empleados.
+  - name: activities
+    description: Operaciones con actividades.
+  - name: areas
+    description: Operaciones con áreas.
+  - name: sessions
+    description: Operaciones con sesiones.
+paths:
+  /customers:
+    get:
+      tags:
+        - customers
+      summary: Lista de clientes
+      description: Mostrar la lista de clientes.
+      operationId: getCustomers
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Customer'
+              example:
+              - customerId: 1
+                name: "Antonio García"
+                email: "antonio@email.com"
+                password: "1234"
+                phone: "123456789"
+                birth_date: "28-05-1990"
+              - customerId: 2
+                name: "Francisco Sánchez"
+                email: "francisco@email.com"
+                password: "pass"
+                phone: "123456789"
+                birth_date: "22-10-1995"
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    post:      
+      tags:
+        - customers
+      summary: Insertar un cliente
+      description: Añadir un nuevo cliente a la lista.
+      operationId: postCustomers
+      requestBody:
+        description: Crea un nuevo cliente
+        required: true
+        content:
+         application/json:
+          schema:
+            $ref: '#/components/schemas/CustomerIn'
+          examples:
+            Antonio:
+              value:
+                name: "Antonio García"
+                email: "antonio@email.com"
+                password: "1234"
+                phone: "123456789"
+                birth_date: "20-05-1990"
+            Francisco:
+              value:
+                name: "Francisco Sánchez"
+                email: "francisco@email.com"
+                password: "pass"
+                phone: "987654321"
+                birth_date: "22-10-1995"
+      responses:
+        '201':
+          description: Se ha registrado correctamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+        '400':
+          description: La consulta no es válida
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+  /customer/{customerId}:
+    get:
+      tags:
+        - customers
+      summary: Mostrar un cliente
+      description: Mostrar la información de un cliente determinado por su ID.
+      operationId: getCustomer
+      parameters:
+        - name: customerId
+          in: path
+          description: Id del cliente
+          required: true
+          schema:
+            type: number
+            format: int32
+            example: 1
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+              examples:
+                Antonio:
+                  value:
+                    customerId: 1
+                    name: "Antonio García"
+                    email: "antonio@email.com"
+                    password: "1234"
+                    phone: "123456789"
+                    birth_date: "28-05-1990"
+                Francisco:
+                  value:
+                    customerId: 2
+                    name: "Francisco Sánchez"
+                    email: "francisco@email.com"
+                    password: "pass"
+                    phone: "123456789"
+                    birth_date: "22-10-1995"
+        '404':
+          description: No se ha encontrado el cliente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFound'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    delete:
+      tags:
+        - customers
+      summary: Eliminar un cliente
+      description: Eliminar la información de un cliente determinado por su ID.
+      operationId: deleteCustomer
+      parameters:
+        - name: customerId
+          in: path
+          description: Id del cliente
+          required: true
+          schema:
+            type: number
+            format: int32
+            example: 1
+      responses:
+        '204':
+          description: No content
+        '404':
+          description: No se ha encontrado el cliente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFound'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    put:
+      tags:
+        - customers
+      summary: Modificar un cliente
+      description: Modificar la información de un cliente determinado por su ID.
+      operationId: modifyCustomer
+      parameters:
+        - name: customerId
+          in: path
+          description: Id del customer
+          required: true
+          schema:
+            type: number
+            format: int32
+            example: 1
+      requestBody:
+        description: Nuevos datos del cliente
+        required: true
+        content:
+         application/json:
+          schema:
+            $ref: '#/components/schemas/CustomerIn'
+          examples:
+            Antonio:
+              value:
+                name: "Antonio García"
+                email: "antonio@email.com"
+                password: "1234"
+                phone: "123456789"
+                birth_date: "28-05-1990"
+            Francisco:
+              value:
+                name: "Francisco Sánchez"
+                email: "francisco@email.com"
+                password: "pass"
+                phone: "987654321"
+                birth_date: "22-10-1995"
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+        '400':
+          description: La consulta no es válida
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        '404':
+          description: No se ha encontrado el cliente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFound'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+                
+  /customer/{customerId}/session/{sessionId}:
+    post:
+      tags:
+        - customers
+      summary: Apuntarse en una sesion
+      description: Permite a un cliente apuntarse en una sesion.
+      operationId: register
+      parameters:
+        - name: sessionId
+          in: path
+          description: Id de la sesión
+          required: true
+          schema:
+            type: number
+            format: int64
+            example: 1
+        - name: customerId
+          in: path
+          description: Id del cliente
+          required: true
+          schema:
+            type: number
+            format: int64
+            example: 1
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+        '404':
+          description: No se ha encontrado la sesion o el cliente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFound'
+  /employees:
+    get:
+      tags:
+        - employees
+      summary: Lista de empleados
+      description: Mostrar todos los empleados.
+      operationId: getEmployees
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Employee'
+                example:
+                - employeeId: 1
+                  name: "Antonio García"
+                  email: "antonio@email.com"
+                  password: "1234"
+                  phone: "123456789"
+                  active: true
+                - employeeId: 2
+                  name: "Francisco Sánchez"
+                  email: "francisco@email.com"
+                  password: "pass"
+                  phone: "123456789"
+                  active: false
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    post:      
+      tags:
+        - employees
+      summary: Insertar un empleado
+      description: Añadir un nuevo empleado a la lista.
+      operationId: postEmployees
+      requestBody:
+        description: Crea un nuevo empleado
+        required: true
+        content:
+         application/json:
+          schema:
+            $ref: '#/components/schemas/EmployeeIn'
+          examples:
+            Antonio:
+              value:
+                name: "Antonio García"
+                email: "antonio@email.com"
+                password: "1234"
+                phone: "123456789"
+                active: true
+            Francisco:
+              value:
+                name: "Francisco Sánchez"
+                email: "francisco@email.com"
+                password: "pass"
+                phone: "987654321"
+                active: false
+      responses:
+        '201':
+          description: Se ha registrado correctamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Employee'
+        '400':
+          description: La consulta no es válida
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+  /employee/{employeeId}:
+    delete:
+      tags:
+        - employees
+      summary: Eliminar un empleado
+      description: Eliminar la información de un empleado determinado por su ID.
+      operationId: deleteEmployee
+      parameters:
+        - name: employeeId
+          in: path
+          description: Id del empleado
+          required: true
+          schema:
+            type: number
+            format: int64
+            example: 1
+      responses:
+        '204':
+          description: No content
+        '404':
+          description: No se ha encontrado el empleado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFound'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    put:
+      tags:
+        - employees
+      summary: Modificar un empleado
+      description: Modificar la información de un empleado determinado por su ID.
+      operationId: modifyEmployee
+      parameters:
+        - name: employeeId
+          in: path
+          description: Id del empleado
+          required: true
+          schema:
+            type: number
+            format: int64
+            example: 1
+      requestBody:
+        description: Nuevos datos del empleado
+        required: true
+        content:
+         application/json:
+          schema:
+            $ref: '#/components/schemas/EmployeeIn'
+          examples:
+            Antonio:
+              value:
+                name: "Antonio García"
+                email: "antonio@email.com"
+                password: "1234"
+                phone: "123456789"
+                active: true
+            Francisco:
+              value:
+                name: "Francisco Sánchez"
+                email: "francisco@email.com"
+                password: "pass"
+                phone: "987654321"
+                active: false
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Employee'
+        '400':
+          description: La consulta no es válida
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        '404':
+          description: No se ha encontrado el país
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFound'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+  /activities:
+    get:
+      tags:
+        - activities
+      summary: Lista de actividades
+      description: Mostrar todas las actividades.
+      operationId: getActivities
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Activity'
+              example:
+              - activityId: 1
+                name: "Spinning"
+                description: "Ejercicio colectivo realizado sobre una bicicleta estática al ritmo de la música"
+                material: "Material necesario para desarrollar la actividad"
+                is_airobic: true
+              - activityId: 2
+                name: "Pilates"
+                description: "Ejercicio que une el dinamismo y la fuerza muscular con el control mental, la respiración y la relajación."
+                material: "Esterilla"
+                is_airobic: true
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    post:      
+      tags:
+        - activities
+      summary: Insertar una actividad
+      description: Añadir una nueva actividad a la lista.
+      operationId: postActivities
+      requestBody:
+        description: Crea una nueva actividad
+        required: true
+        content:
+         application/json:
+          schema:
+            $ref: '#/components/schemas/ActivityIn'
+          examples:
+            Madrid:
+              value:
+                name: "Spinning"
+                description: "Ejercicio colectivo realizado sobre una bicicleta estática al ritmo de la música"
+                material: "Ninguno"
+                is_airobic: true
+            Barcelona:
+              value:
+                name: "Pilates"
+                description: "Ejercicio que une el dinamismo y la fuerza muscular con el control mental, la respiración y la relajación."
+                material: "Esterilla"
+                is_airobic: true
+      responses:
+        '201':
+          description: Se ha registrado correctamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Activity'
+        '400':
+          description: La consulta no es válida
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+  /activity/{activityId}:
+    get:
+      tags:
+        - activities
+      summary: Mostrar una actividad
+      description: Mostrar la información de una actividad determinada por su ID.
+      operationId: getActivity
+      parameters:
+        - name: activityId
+          in: path
+          description: Id de la actividad
+          required: true
+          schema:
+            type: number
+            format: int64
+            example: 1
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Activity'
+              examples:
+                Spinning:
+                  value:
+                    activityId: 1
+                    name: "Spinning"
+                    description: "Ejercicio colectivo realizado sobre una bicicleta estática al ritmo de la música"
+                    material: "Ninguno"
+                    is_airobic: true
+                Pilates:
+                  value:
+                    activityId: 1
+                    name: "Pilates"
+                    description: "Ejercicio que une el dinamismo y la fuerza muscular con el control mental, la respiración y la relajación."
+                    material: "Esterilla"
+                    is_airobic: true
+        '404':
+          description: No se ha encontrado la actividad
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFound'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    delete:
+      tags:
+        - activities
+      summary: Eliminar una actividad
+      description: Eliminar la información de una actividad determinada por su ID.
+      operationId: deleteActivity
+      parameters:
+        - name: activityId
+          in: path
+          description: Id de la activity
+          required: true
+          schema:
+            type: number
+            format: int64
+            example: 1
+      responses:
+        '204':
+          description: No content
+        '404':
+          description: No se ha encontrado la activity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFound'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    put:
+      tags:
+        - activities
+      summary: Modificar una actividad
+      description: Modificar la información de una actividad determinada por su ID.
+      operationId: modifyActivity
+      parameters:
+        - name: activityId
+          in: path
+          description: Id de la actividad
+          required: true
+          schema:
+            type: number
+            format: int64
+            example: 1
+      requestBody:
+        description: Nuevos datos de la activity
+        required: true
+        content:
+         application/json:
+          schema:
+            $ref: '#/components/schemas/ActivityIn'
+          examples:
+            Madrid:
+              value:
+                name: "Spinning"
+                description: "Ejercicio colectivo realizado sobre una bicicleta estática al ritmo de la música"
+                material: "Ninguno"
+                is_airobic: true
+            Barcelona:
+              value:
+                name: "Pilates"
+                description: "Ejercicio que une el dinamismo y la fuerza muscular con el control mental, la respiración y la relajación."
+                material: "Esterilla"
+                is_airobic: true
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Activity'
+        '400':
+          description: La consulta no es válida
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        '404':
+          description: No se ha encontrado la actividad
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFound'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+  /areas:
+    get:
+      tags:
+        - areas
+      summary: Lista de áreas
+      description: Mostrar la lista de todas las áreas.
+      operationId: getAreas
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Area'
+              example:
+              - areaId: 1
+                number: 1
+                name: "Sala de Spinning"
+                description: "Descripción de la sala"
+                outdoor: false
+              - areaId: 2
+                number: 2
+                name: "Pista de pádel"
+                description: "Descripción de la pista"
+                outdoor: true
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    post:      
+      tags:
+        - areas
+      summary: Insertar un área
+      description: Añadir una nueva área a la lista.
+      operationId: postAreas
+      requestBody:
+        description: Crea una nueva área
+        required: true
+        content:
+         application/json:
+          schema:
+            $ref: '#/components/schemas/AreaIn'
+          examples:
+            Sala de spinning:
+              value:
+                number: 1
+                name: "Sala de Spinning"
+                description: "Descripción de la sala"
+                outdoor: false
+            Pista de pádel:
+              value:
+                number: 2
+                name: "Pista de pádel"
+                description: "Descripción de la pista"
+                outdoor: true
+      responses:
+        '201':
+          description: Se ha registrado correctamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Area'
+        '400':
+          description: La consulta no es válida
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+  /area/{areaId}:
+    get:
+      tags:
+        - areas
+      summary: Mostrar un área
+      description: Mostrar la información de un área determinada por su ID.
+      operationId: getArea
+      parameters:
+        - name: areaId
+          in: path
+          description: Id del área
+          required: true
+          schema:
+            type: number
+            format: int64
+            example: 1
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Area'
+              examples:
+                Sala de spinning:
+                  value:
+                    areaId: 1
+                    number: 1
+                    name: "Sala de Spinning"
+                    description: "Descripción de la sala"
+                    outdoor: false
+                Pista de pádel:
+                  value:
+                    areaId: 2
+                    number: 2
+                    name: "Pista de pádel"
+                    description: "Descripción de la pista"
+                    outdoor: true
+        '404':
+          description: No se ha encontrado el área
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFound'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    delete:
+      tags:
+        - areas
+      summary: Eliminar un área
+      description: Eliminar la información de un área determinada por su ID.
+      operationId: deleteArea
+      parameters:
+        - name: areaId
+          in: path
+          description: Id del área
+          required: true
+          schema:
+            type: number
+            format: int64
+            example: 1
+      responses:
+        '204':
+          description: No content
+        '404':
+          description: No se ha encontrado el área
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFound'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    put:
+      tags:
+        - areas
+      summary: Modificar un área
+      description: Modificar la información de un área determinado por su ID.
+      operationId: modifyArea
+      parameters:
+        - name: areaId
+          in: path
+          description: Id del área
+          required: true
+          schema:
+            type: number
+            format: int64
+            example: 1
+      requestBody:
+        description: Nuevos datos del área
+        required: true
+        content:
+         application/json:
+          schema:
+            $ref: '#/components/schemas/AreaIn'
+          examples:
+            Sala de spinning:
+              value:
+                number: 1
+                name: "Sala de Spinning"
+                description: "Descripción de la sala"
+                outdoor: false
+            Pista de pádel:
+              value:
+                number: 2
+                name: "Pista de pádel"
+                description: "Descripción de la pista"
+                outdoor: true
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Area'
+        '400':
+          description: La consulta no es válida
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        '404':
+          description: No se ha encontrado el lugar
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFound'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+  /sessions:
+    get:
+      tags:
+        - sessions
+      summary: Lista de sesiones
+      description: Mostrar todas las sesiones.
+      operationId: getSessions
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Session'
+              example:
+              - sessionId: 1
+                employeeId: 8
+                activityId: 18
+                areaId: 2
+                date_time: "2020-01-15T18:45:30Z"
+                duration: 30
+                capacity: 15
+                level: 5
+              - sessionId: 5
+                employeeId: 7
+                activityId: 12
+                areaId: 18
+                date_time: "2021-08-20T09:15:45Z"
+                duration: 45
+                capacity: 20
+                level: 3
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    post:      
+      tags:
+        - sessions
+      summary: Insertar una sesión
+      description: Añadir una nueva sesión a la lista.
+      operationId: postSessions
+      requestBody:
+        description: Crea una nueva sesión
+        required: true
+        content:
+         application/json:
+          schema:
+            $ref: '#/components/schemas/SessionIn'
+          examples:
+            Sesion1:
+              value:
+                employeeId: 8
+                activityId: 18
+                areaId: 2
+                date_time: "2020-01-15T18:45:30Z"
+                duration: 30
+                capacity: 15
+                level: 5
+            Sesion2:
+              value:
+                employeeId: 7
+                activityId: 12
+                areaId: 18
+                date_time: "2021-08-20T09:15:45Z"
+                duration: 45
+                capacity: 20
+                level: 3
+      responses:
+        '201':
+          description: Se ha registrado correctamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+        '400':
+          description: La consulta no es válida
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+  /session/{sessionId}:
+    get:
+      tags:
+        - sessions
+      summary: Mostrar una sesión
+      description: Mostrar la información de una sesión determinada por su ID.
+      operationId: getSession
+      parameters:
+        - name: sessionId
+          in: path
+          description: Id de la sesión
+          required: true
+          schema:
+            type: number
+            format: int64
+            example: 1
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+              examples:
+                Sesion1:
+                  value:
+                    sessionId: 1
+                    employeeId: 8
+                    activityId: 18
+                    areaId: 2
+                    date_time: "2020-01-15T18:45:30Z"
+                    duration: 30
+                    capacity: 15
+                    level: 5
+                Sesion2:
+                  value:
+                    sessionId: 5
+                    employeeId: 7
+                    activityId: 12
+                    areaId: 18
+                    date_time: "2021-08-20T09:15:45Z"
+                    duration: 45
+                    capacity: 20
+                    level: 3
+        '404':
+          description: No se ha encontrado la visita
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFound'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    delete:
+      tags:
+        - sessions
+      summary: Eliminar una sesión
+      description: Eliminar la información de una sesión determinada por su ID.
+      operationId: deleteSession
+      parameters:
+        - name: sessionId
+          in: path
+          description: Id de la sesión
+          required: true
+          schema:
+            type: number
+            format: int64
+            example: 1
+      responses:
+        '204':
+          description: No content
+        '404':
+          description: No se ha encontrado la sesión
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFound'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+    put:
+      tags:
+        - sessions
+      summary: Modificar una sesión
+      description: Modificar la información de una sesión determinada por su ID.
+      operationId: modifySession
+      parameters:
+        - name: sessionId
+          in: path
+          description: Id de la sesión
+          required: true
+          schema:
+            type: number
+            format: int64
+            example: 1
+      requestBody:
+        description: Nuevos datos de la sesión
+        required: true
+        content:
+         application/json:
+          schema:
+            $ref: '#/components/schemas/SessionIn'
+          examples:
+            Sesion1:
+              value:
+                employeeId: 8
+                activityId: 18
+                areaId: 2
+                date_time: "2020-01-15T18:45:30Z"
+                duration: 30
+                capacity: 15
+                level: 5
+            Sesion2:
+              value:
+                employeeId: 7
+                activityId: 12
+                areaId: 18
+                date_time: "2021-08-20T09:15:45Z"
+                duration: 45
+                capacity: 20
+                level: 3
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+        '400':
+          description: La consulta no es válida
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BadRequest'
+        '404':
+          description: No se ha encontrado la sesion
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFound'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+  /session/{sessionId}/customer/{customerId}:
+    delete:
+      tags:
+        - sessions
+      summary: Desapuntarse de una sesion
+      description: Permite a un cliente desapuntarse de una sesion.
+      operationId: dropOut
+      parameters:
+        - name: sessionId
+          in: path
+          description: Id de la sesión
+          required: true
+          schema:
+            type: number
+            format: int64
+            example: 1
+        - name: customerId
+          in: path
+          description: Id del cliente
+          required: true
+          schema:
+            type: number
+            format: int64
+            example: 1
+      responses:
+        '204':
+          description: No content
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+        '404':
+          description: No se ha encontrado la sesion o el cliente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFound'
+                
+components:
+    schemas:
+      CustomerIn:
+        required:
+          - name
+          - email
+          - password
+        properties:
+          name:
+            type: string
+            example: "Antonio García"
+          email:
+            type: string
+            example: "example@email.com"
+          password:
+            type: string
+            example: "1234"
+          phone:
+            type: string
+            example: "123456789"
+          birth_date:
+            type: string
+            format: date
+            example: "15-01-2020"
+        type: object
+      Customer:
+        allOf:
+          - type: object
+            properties:
+              customerId:
+                type: number
+                format: int32
+                example: 1
+          - $ref: '#/components/schemas/CustomerIn'
+      EmployeeIn:
+        required:
+          - name
+          - email
+          - password
+        properties:
+          name:
+            type: string
+            example: "España"
+          email:
+            type: string
+            example: "example@email.com"
+          password:
+            type: string
+            example: "1234"
+          phone:
+            type: string
+            example: "123456789"
+          active:
+            type: boolean
+            example: true
+        type: object
+      Employee:
+        allOf:
+          - type: object
+            properties:
+              employeeId:
+                type: number
+                format: int32
+                example: 1
+          - $ref: '#/components/schemas/EmployeeIn'      
+      ActivityIn:
+        required:
+          - name
+        properties:
+          name:
+            type: string
+            example: "Spinning"
+          description:
+            type: string
+            example: "Ejercicio colectivo realizado sobre una bicicleta estática al ritmo de la música"
+          material:
+            type: string
+            example: "Ninguno"
+          is_aerobic:
+            type: boolean
+            example: true
+        type: object
+      Activity:
+        allOf:
+          - type: object
+            properties:
+              activityId:
+                type: number
+                format: int32
+                example: 1
+          - $ref: '#/components/schemas/ActivityIn'
+      AreaIn:
+        required:
+          - number
+          - name
+        properties:
+          number:
+            type: number
+            format: int32
+            example: 1
+          name:
+            type: string
+            example: "Sala de spinning"
+          description:
+            type: string
+            example: "Descripción de la sala de spinning"
+          outdoor:
+            type: boolean
+            example: false
+        type: object
+      Area:
+        allOf:
+          - type: object
+            properties:
+              areaId:
+                type: number
+                format: int32
+                example: 1
+          - $ref: '#/components/schemas/AreaIn'
+      SessionIn:
+        required:
+          - activity
+          - area
+          - datetime
+        properties:
+          employee:
+            type: number
+            format: int32
+            example: 1
+          activity:
+            type: number
+            format: int32
+            example: 1
+          area:
+            type: number
+            format: int32
+            example: 1
+          date_time:
+            type: string
+            format: date_time
+            example: "2020-01-15 18:45"
+          duration:
+            type: number
+            format: int32
+            example: 30
+          capacity:
+            type: number
+            format: int32
+            example: 15
+          level:
+            type: number
+            format: int32
+            example: 5
+        type: object
+      Session:
+        allOf:
+          - type: object
+            properties:
+              sessionId:
+                type: number
+                format: int32
+                example: 1
+          - $ref: '#/components/schemas/SessionIn'
+      ErrorResponse:
+        properties:
+          internalError:
+            type: number
+            format: int32
+          message:
+            type: string
+        type: object
+      BadRequest:
+        allOf:
+          - type: object
+          - $ref: '#/components/schemas/ErrorResponse'
+        example:
+          internalError: 400
+          message: "La consulta no es válida"
+      ResourceNotFound:
+        allOf:
+          - type: object
+          - $ref: '#/components/schemas/ErrorResponse'
+        example:
+          internalError: 404
+          message: "Recurso no encontrado"
+      InternalServerError:
+        allOf:
+          - type: object
+          - $ref: '#/components/schemas/ErrorResponse'
+        example:
+          internalError: 500
+          message: "Error interno del servidor"
