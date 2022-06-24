@@ -4577,3 +4577,146 @@ java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a par
 2022-06-23 19:23:26,198 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-1] Inicio deleteEmployee
 2022-06-23 19:23:26,282 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-1] Fin deleteEmployee
 2022-06-23 19:23:26,391 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-3] Fin getEmployees
+2022-06-23 19:30:39,932 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2022-06-23 19:30:39,935 INFO org.springframework.boot.StartupInfoLogger [main] Starting RdAsportsApplication using Java 11.0.11 on Raul with PID 15468 (C:\Users\r_mar\Desktop\RDAsportsAPI\target\classes started by Raul in C:\Users\r_mar\Desktop\RDAsportsAPI)
+2022-06-23 19:30:39,936 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-06-23 19:30:40,336 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-23 19:30:40,386 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 44 ms. Found 5 JPA repository interfaces.
+2022-06-23 19:30:40,798 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
+2022-06-23 19:30:40,805 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2022-06-23 19:30:40,805 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2022-06-23 19:30:40,806 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-23 19:30:40,892 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2022-06-23 19:30:40,893 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 932 ms
+2022-06-23 19:30:40,971 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-23 19:30:40,996 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-06-23 19:30:41,064 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-23 19:30:41,115 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-06-23 19:30:41,117 WARN com.zaxxer.hikari.util.DriverDataSource [main] Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2022-06-23 19:30:41,198 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-06-23 19:30:41,208 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2022-06-23 19:30:41,716 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-23 19:30:41,723 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-23 19:30:41,950 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-23 19:30:42,122 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2022-06-23 19:30:42,136 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path ''
+2022-06-23 19:30:42,142 INFO org.springframework.boot.StartupInfoLogger [main] Started RdAsportsApplication in 2.457 seconds (JVM running for 2.816)
+2022-06-23 19:30:42,553 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-3] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-23 19:30:42,553 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-3] Initializing Servlet 'dispatcherServlet'
+2022-06-23 19:30:42,554 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-3] Completed initialization in 0 ms
+2022-06-23 19:30:42,626 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-3] Inicio addEmployees
+2022-06-23 19:30:42,675 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-3] Fin addEmployees
+2022-06-23 19:32:41,585 INFO com.rdacompany.RDAsportsAPI.controller.ActivityController [http-nio-8081-exec-5] Inicio addActivity
+2022-06-23 19:32:41,592 INFO com.rdacompany.RDAsportsAPI.controller.ActivityController [http-nio-8081-exec-5] Fin addActivity
+2022-06-23 19:33:05,426 INFO com.rdacompany.RDAsportsAPI.controller.ActivityController [http-nio-8081-exec-9] Inicio addActivity
+2022-06-23 19:33:05,434 INFO com.rdacompany.RDAsportsAPI.controller.ActivityController [http-nio-8081-exec-9] Fin addActivity
+2022-06-23 19:34:47,365 INFO com.rdacompany.RDAsportsAPI.controller.AreaController [http-nio-8081-exec-2] Inicio addArea
+2022-06-23 19:34:47,373 INFO com.rdacompany.RDAsportsAPI.controller.AreaController [http-nio-8081-exec-2] Fin addArea
+2022-06-23 19:34:51,360 INFO com.rdacompany.RDAsportsAPI.controller.AreaController [http-nio-8081-exec-10] Inicio addArea
+2022-06-23 19:34:51,368 INFO com.rdacompany.RDAsportsAPI.controller.AreaController [http-nio-8081-exec-10] Fin addArea
+2022-06-23 19:35:03,281 INFO com.rdacompany.RDAsportsAPI.controller.AreaController [http-nio-8081-exec-1] Inicio addArea
+2022-06-23 19:35:03,287 INFO com.rdacompany.RDAsportsAPI.controller.AreaController [http-nio-8081-exec-1] Fin addArea
+2022-06-23 19:35:07,821 INFO com.rdacompany.RDAsportsAPI.controller.AreaController [http-nio-8081-exec-3] Inicio addArea
+2022-06-23 19:35:07,829 INFO com.rdacompany.RDAsportsAPI.controller.AreaController [http-nio-8081-exec-3] Fin addArea
+2022-06-23 19:35:33,887 INFO com.rdacompany.RDAsportsAPI.controller.ActivityController [http-nio-8081-exec-4] Inicio addActivity
+2022-06-23 19:35:33,895 INFO com.rdacompany.RDAsportsAPI.controller.ActivityController [http-nio-8081-exec-4] Fin addActivity
+2022-06-23 19:35:42,846 INFO com.rdacompany.RDAsportsAPI.controller.ActivityController [http-nio-8081-exec-6] Inicio addActivity
+2022-06-23 19:35:42,851 INFO com.rdacompany.RDAsportsAPI.controller.ActivityController [http-nio-8081-exec-6] Fin addActivity
+2022-06-23 19:35:49,142 INFO com.rdacompany.RDAsportsAPI.controller.ActivityController [http-nio-8081-exec-5] Inicio addActivity
+2022-06-23 19:35:49,150 INFO com.rdacompany.RDAsportsAPI.controller.ActivityController [http-nio-8081-exec-5] Fin addActivity
+2022-06-23 19:36:07,512 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-9] Inicio addEmployees
+2022-06-23 19:36:07,520 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-9] Fin addEmployees
+2022-06-23 19:36:21,676 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-7] Inicio addEmployees
+2022-06-23 19:36:21,681 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-7] Fin addEmployees
+2022-06-23 19:37:08,472 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-8] Inicio addEmployees
+2022-06-23 19:37:08,482 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-8] Fin addEmployees
+2022-06-23 19:37:15,618 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-2] Inicio addEmployees
+2022-06-23 19:37:15,623 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-2] Fin addEmployees
+2022-06-23 19:37:24,124 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-10] Inicio addEmployees
+2022-06-23 19:37:24,131 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-10] Fin addEmployees
+2022-06-23 19:38:32,476 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.2.3.Final
+2022-06-23 19:38:32,479 INFO org.springframework.boot.StartupInfoLogger [main] Starting RdAsportsApplication using Java 11.0.11 on Raul with PID 6656 (C:\Users\r_mar\Desktop\RDAsportsAPI\target\classes started by Raul in C:\Users\r_mar\Desktop\RDAsportsAPI)
+2022-06-23 19:38:32,481 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-06-23 19:38:32,860 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-23 19:38:32,902 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 38 ms. Found 5 JPA repository interfaces.
+2022-06-23 19:38:33,340 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8081 (http)
+2022-06-23 19:38:33,347 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2022-06-23 19:38:33,348 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2022-06-23 19:38:33,348 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-23 19:38:33,437 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2022-06-23 19:38:33,437 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 933 ms
+2022-06-23 19:38:33,520 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-23 19:38:33,545 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-06-23 19:38:33,619 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-23 19:38:33,674 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-06-23 19:38:33,676 WARN com.zaxxer.hikari.util.DriverDataSource [main] Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2022-06-23 19:38:33,771 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-06-23 19:38:33,781 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2022-06-23 19:38:34,216 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-23 19:38:34,221 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-23 19:38:34,449 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-23 19:38:34,644 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8081"]
+2022-06-23 19:38:34,657 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8081 (http) with context path ''
+2022-06-23 19:38:34,664 INFO org.springframework.boot.StartupInfoLogger [main] Started RdAsportsApplication in 2.395 seconds (JVM running for 2.737)
+2022-06-23 19:38:47,756 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-23 19:38:47,756 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-06-23 19:38:47,757 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Completed initialization in 0 ms
+2022-06-23 19:38:47,863 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-2] Fin getEmployees
+2022-06-23 19:40:54,115 INFO com.rdacompany.RDAsportsAPI.controller.CustomerController [http-nio-8081-exec-6] Inicio addCustomer
+2022-06-23 19:40:54,152 INFO com.rdacompany.RDAsportsAPI.controller.CustomerController [http-nio-8081-exec-6] Fin addCustomer
+2022-06-23 19:41:17,850 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-9] Fin consulta de todas las session
+2022-06-23 19:41:52,999 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-5] Fin getEmployees
+2022-06-23 19:42:01,140 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-4] Fin getEmployees
+2022-06-23 19:42:08,908 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-10] Fin getEmployees
+2022-06-23 19:42:09,165 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-1] Fin getEmployees
+2022-06-23 19:42:09,168 INFO com.rdacompany.RDAsportsAPI.controller.AreaController [http-nio-8081-exec-2] Fin gerAreas
+2022-06-23 19:42:09,176 INFO com.rdacompany.RDAsportsAPI.controller.ActivityController [http-nio-8081-exec-3] Fin getActivity
+2022-06-23 19:42:38,745 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-9] Inicio addSession
+2022-06-23 19:42:38,809 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-9] Fin addSession
+2022-06-23 19:43:10,761 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-1] Fin consulta de todas las session
+2022-06-23 19:43:12,077 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-2] Inicio busqueda sessionById
+2022-06-23 19:43:12,082 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-2] Fin consultar sessionById
+2022-06-23 19:43:18,213 INFO com.rdacompany.RDAsportsAPI.controller.CustomerController [http-nio-8081-exec-3] Inicio booking
+2022-06-23 19:43:18,217 INFO com.rdacompany.RDAsportsAPI.controller.CustomerController [http-nio-8081-exec-3] Customer encontrado 21
+2022-06-23 19:43:18,221 INFO com.rdacompany.RDAsportsAPI.controller.CustomerController [http-nio-8081-exec-3] Session encontrado 15
+2022-06-23 19:43:18,221 INFO com.rdacompany.RDAsportsAPI.service.CustomerServiceImpl [http-nio-8081-exec-3] Inicio addBooking
+2022-06-23 19:43:18,237 INFO com.rdacompany.RDAsportsAPI.service.CustomerServiceImpl [http-nio-8081-exec-3] Fin addBooking
+2022-06-23 19:43:18,239 INFO com.rdacompany.RDAsportsAPI.controller.CustomerController [http-nio-8081-exec-3] Fin booking
+2022-06-23 19:43:18,241 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-6] Fin consulta de todas las session
+2022-06-23 19:43:20,313 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-7] Inicio busqueda sessionById
+2022-06-23 19:43:20,316 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-7] Fin consultar sessionById
+2022-06-23 19:43:25,296 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-9] Fin consulta de todas las session
+2022-06-23 19:43:29,662 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-5] Fin consulta de todas las session
+2022-06-23 19:43:33,350 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-4] Fin consulta de todas las session
+2022-06-23 19:43:41,101 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-10] Inicio busqueda sessionById
+2022-06-23 19:43:41,105 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-10] Fin consultar sessionById
+2022-06-23 19:43:42,599 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-1] Fin consulta de todas las session
+2022-06-23 19:43:43,666 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-2] Inicio busqueda sessionById
+2022-06-23 19:43:43,669 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-2] Fin consultar sessionById
+2022-06-23 19:43:46,331 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-3] Fin consulta de todas las session
+2022-06-23 19:43:50,628 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-6] Fin consulta de todas las session
+2022-06-23 19:43:51,904 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-7] Inicio busqueda sessionById
+2022-06-23 19:43:51,908 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-7] Fin consultar sessionById
+2022-06-23 19:43:52,703 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-9] Inicio dropOut
+2022-06-23 19:43:52,713 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-9] Fin dropOut
+2022-06-23 19:43:52,723 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-5] Fin consulta de todas las session
+2022-06-23 19:43:57,517 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-4] Fin consulta de todas las session
+2022-06-23 19:43:59,393 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-8] Inicio busqueda sessionById
+2022-06-23 19:43:59,396 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-8] Fin consultar sessionById
+2022-06-23 19:44:01,952 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-10] Fin consulta de todas las session
+2022-06-23 19:48:47,335 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-10] Fin consulta de todas las session
+2022-06-23 19:49:14,267 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-1] Inicio busqueda sessionById
+2022-06-23 19:49:14,270 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-1] Fin consultar sessionById
+2022-06-23 19:49:15,162 INFO com.rdacompany.RDAsportsAPI.controller.CustomerController [http-nio-8081-exec-2] Inicio booking
+2022-06-23 19:49:15,164 INFO com.rdacompany.RDAsportsAPI.controller.CustomerController [http-nio-8081-exec-2] Customer encontrado 21
+2022-06-23 19:49:15,166 INFO com.rdacompany.RDAsportsAPI.controller.CustomerController [http-nio-8081-exec-2] Session encontrado 15
+2022-06-23 19:49:15,166 INFO com.rdacompany.RDAsportsAPI.service.CustomerServiceImpl [http-nio-8081-exec-2] Inicio addBooking
+2022-06-23 19:49:15,172 INFO com.rdacompany.RDAsportsAPI.service.CustomerServiceImpl [http-nio-8081-exec-2] Fin addBooking
+2022-06-23 19:49:15,173 INFO com.rdacompany.RDAsportsAPI.controller.CustomerController [http-nio-8081-exec-2] Fin booking
+2022-06-23 19:49:15,190 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-3] Fin consulta de todas las session
+2022-06-23 19:49:17,934 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-6] Inicio busqueda sessionById
+2022-06-23 19:49:17,937 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-6] Fin consultar sessionById
+2022-06-23 19:49:19,480 INFO com.rdacompany.RDAsportsAPI.controller.SessionController [http-nio-8081-exec-7] Fin consulta de todas las session
+2022-06-23 19:49:35,139 INFO com.rdacompany.RDAsportsAPI.controller.EmployeeController [http-nio-8081-exec-1] Fin getEmployees
+2022-06-23 19:49:47,260 INFO com.rdacompany.RDAsportsAPI.controller.CustomerController [http-nio-8081-exec-2] Inicio removeCustomer
+2022-06-23 19:49:47,277 INFO com.rdacompany.RDAsportsAPI.controller.CustomerController [http-nio-8081-exec-2] Fin removeCustomer

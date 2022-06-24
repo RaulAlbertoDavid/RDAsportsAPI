@@ -16,8 +16,6 @@ tags:
     description: Operaciones con áreas.
   - name: sessions
     description: Operaciones con sesiones.
-  - name: bookings
-    description: Operaciones con reservas.
 paths:
   /customers:
     get:
@@ -245,6 +243,50 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerError'
+                
+  /customer/{customerId}/session/{sessionId}:
+    post:
+      tags:
+        - customers
+      summary: Apuntarse en una sesion
+      description: Permite a un cliente apuntarse en una sesion.
+      operationId: register
+      parameters:
+        - name: sessionId
+          in: path
+          description: Id de la sesión
+          required: true
+          schema:
+            type: number
+            format: int64
+            example: 1
+        - name: customerId
+          in: path
+          description: Id del cliente
+          required: true
+          schema:
+            type: number
+            format: int64
+            example: 1
+      responses:
+        '200':
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerError'
+        '404':
+          description: No se ha encontrado la sesion o el cliente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFound'
   /employees:
     get:
       tags:
@@ -1087,7 +1129,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/BadRequest'
         '404':
-          description: No se ha encontrado la visita
+          description: No se ha encontrado la sesion
           content:
             application/json:
               schema:
@@ -1098,81 +1140,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerError'
-  /bookings:
-    get:
-      tags:
-        - bookings
-      summary: Lista de reservas
-      description: Mostrar todas las reservas.
-      operationId: getBookings
-      responses:
-        '200':
-          description: Ok
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Booking'
-              example:
-              - sessionId: 1
-                customerId: 2
-              - sessionId: 5
-                customerId: 6
-        '500':
-          description: Error interno del servidor
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServerError'
-    post:      
-      tags:
-        - bookings
-      summary: Insertar una reserva
-      description: Añadir una nueva reserva a la lista.
-      operationId: postBookings
-      requestBody:
-        description: Crea una nueva reserva
-        required: true
-        content:
-         application/json:
-          schema:
-            $ref: '#/components/schemas/Booking'
-          examples:
-            Booking1:
-              value:
-                sessionId: 8
-                customerId: 18
-            Booking2:
-              value:
-                sessionId: 7
-                customerId: 12
-      responses:
-        '201':
-          description: Se ha registrado correctamente
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Booking'
-        '400':
-          description: La consulta no es válida
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/BadRequest'
-        '500':
-          description: Error interno del servidor
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/InternalServerError'
-  /booking/session/{sessionId}/customer/{customerId}:
+  /session/{sessionId}/customer/{customerId}:
     delete:
       tags:
-        - bookings
-      summary: Eliminar una reserva
-      description: Eliminar la información de una sesión determinada por su ID.
-      operationId: deleteBooking
+        - sessions
+      summary: Desapuntarse de una sesion
+      description: Permite a un cliente desapuntarse de una sesion.
+      operationId: dropOut
       parameters:
         - name: sessionId
           in: path
@@ -1193,18 +1167,19 @@ paths:
       responses:
         '204':
           description: No content
-        '404':
-          description: No se ha encontrado la sesión
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ResourceNotFound'
         '500':
           description: Error interno del servidor
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/InternalServerError'
+        '404':
+          description: No se ha encontrado la sesion o el cliente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFound'
+                
 components:
     schemas:
       CustomerIn:
